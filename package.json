@@ -12,7 +12,6 @@
     "type": "git",
     "url": "https://github.com/IBM/ibm-envizi-emissions-api-nodejs-sdk"
   },
-  "private":"true",
   "keywords": [
     "EMISSIONS-API-SDK",
     "EMISSIONS-SDK",
