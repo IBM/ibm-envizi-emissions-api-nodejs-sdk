@@ -62,17 +62,16 @@ export interface FactorResponse {
   
   /** Publication end date in ISO format (optional) */
   publishedTo?: string;
-
-  /** Effective start date in ISO format (optional) */
-  effectiveFrom?: string;
-
-  /** Effective end date in ISO format (optional) */
-  effectiveTo?: string;
-
   
   /** Geographic region (e.g., "Earth", "India") */
   region: string;
   
   /** Unique factor identifier */
   factorId: number;
+
+  /** activity based or spend based */
+  methodology: string;
+
+  /** scopes data belongs to */
+	scope : string[];
 }
