@@ -1,6 +1,6 @@
 {
   "name": "emissions-api-sdk",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "sdk for IBM Emissions APIs",
   "main": "dist/index.js",
   "types": "dist/types/index.d.ts",
@@ -34,8 +34,10 @@
   ],
   "author": "santhosh0703,Prakhar-sahu,taylorsteffanj",
   "license": "Apache-2.0",
-  "overrides": {
-    "markdown-it": "^14.1.1"
+  "resolutions": {
+    "markdown-it": "^14.1.1",
+    "minimatch": "^10.2.1",
+    "test-exclude": "^7.0.1"
   },
   "dependencies": {
     "axios": "^1.13.5"
