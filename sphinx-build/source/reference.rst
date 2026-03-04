@@ -31,73 +31,37 @@ API
 
 .. js:autofunction:: EconomicActivity.calculate
 
-Metadata APIs
-===========
+
+Global Metadata API
+====================
+
+The global Metadata API provides a unified way to query metadata across different endpoints without calling endpoint-specific methods.
+
+- **getTypes/postTypes** and **getArea/postArea**: Accept an optional ``endpoint`` parameter to query metadata for specific endpoints
+- **getUnits/postUnits**: Accept an optional ``type`` parameter to query units for specific emission types
+
+**Supported endpoints** (for getTypes/postTypes and getArea/postArea): ``calculation``, ``location``, ``stationary``, ``mobile``, ``fugitive``, ``factor``, ``search``, ``transportation-and-distribution``, ``economic-activity``, ``real-estate``
 
 getTypes
 --------
 
-.. js:autofunction:: Factor.getTypes
+.. js:autofunction:: Metadata.getTypes
 
-.. js:autofunction:: Calculation.getTypes
-
-.. js:autofunction:: Location.getTypes
-
-.. js:autofunction:: Mobile.getTypes
-
-.. js:autofunction:: Stationary.getTypes
-
-.. js:autofunction:: TransportationAndDistribution.getTypes
-
-.. js:autofunction:: Fugitive.getTypes
-
-.. js:autofunction:: RealEstate.getTypes
-
-.. js:autofunction:: EconomicActivity.getTypes
+.. js:autofunction:: Metadata.postTypes
 
 getArea
 -------
 
-.. js:autofunction:: Factor.getArea
+.. js:autofunction:: Metadata.getArea
 
-.. js:autofunction:: Factor.getSearchArea
-
-.. js:autofunction:: Calculation.getArea
-
-.. js:autofunction:: Location.getArea
-
-.. js:autofunction:: Mobile.getArea
-
-.. js:autofunction:: Stationary.getArea
-
-.. js:autofunction:: TransportationAndDistribution.getArea
-
-.. js:autofunction:: Fugitive.getArea
-
-.. js:autofunction:: RealEstate.getArea
-
-.. js:autofunction:: EconomicActivity.getArea
+.. js:autofunction:: Metadata.postArea
 
 getUnits
 --------
 
-.. js:autofunction:: Factor.getUnits
+.. js:autofunction:: Metadata.getUnits
 
-.. js:autofunction:: Calculation.getUnits
-
-.. js:autofunction:: Location.getUnits
-
-.. js:autofunction:: Mobile.getUnits
-
-.. js:autofunction:: Stationary.getUnits
-
-.. js:autofunction:: TransportationAndDistribution.getUnits
-
-.. js:autofunction:: Fugitive.getUnits
-
-.. js:autofunction:: RealEstate.getUnits
-
-.. js:autofunction:: EconomicActivity.getUnits
+.. js:autofunction:: Metadata.postUnits
 
 
 Usage API

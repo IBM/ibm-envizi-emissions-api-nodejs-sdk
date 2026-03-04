@@ -1,6 +1,6 @@
 # IBM Envizi - Emissions API Node.js SDK
 
-IBM Envizi - Emissions API (Emissions API) is a managed factor database and calculation engine for embedding greenhouse gas (GHG) emissions calculations into operational decision making.
+[IBM Envizi - Emissions API](https://www.ibm.com/products/envizi/emissions-api) (Emissions API) is a managed factor database and calculation engine for embedding greenhouse gas (GHG) emissions calculations into operational decision making.
 
 The `emissions-api-sdk` is a Node.js SDK for using Emissions API in your projects.
 
@@ -8,7 +8,7 @@ The `emissions-api-sdk` is a Node.js SDK for using Emissions API in your project
 
 To get started with the Emissions API follow these steps:
 
-- Sign up for the preview waitlist [IBMid sign up](https://www.ibm.com/account/reg/us-en/signup?formid=urx-53659) page.
+- Sign up for the preview waitlist [IBMid sign up](https://www.ibm.com/account/reg/us-en/signup?formid=urx-53999) page.
 - You will be sent an invite email to join to create an account.
 - Read the [Introduction](https://developer.ibm.com/apis/catalog/ghgemissions--ibm-envizi-emissions-api/Introduction) page to get an overview of the Emissions API.
 
@@ -48,42 +48,35 @@ const result = await LocationEmission.calculate({
 
 ## Metadata APIs
 
-The SDK provides Metadata APIs to discover available emission types, geographical areas, and units:
-
-### Get Available Types
+The Metadata API provides a unified way to query metadata for any endpoint:
 
 ```javascript
-import { LocationEmission } from 'emissions-api-sdk';
+import { Metadata } from 'emissions-api-sdk';
 
-// Get all available Location emission types
-const types = await LocationEmission.getTypes();
+// Get types for any endpoint (defaults to 'calculation')
+const allTypes = await Metadata.getTypes();
+const locationTypes = await Metadata.getTypes('location');
+const stationaryTypes = await Metadata.postTypes('stationary');
+
+// Get areas for any endpoint
+const allAreas = await Metadata.getArea();
+const mobileAreas = await Metadata.getArea('mobile');
+const fugitiveAreas = await Metadata.postArea('fugitive');
+
+// Get units for any type
+const allUnits = await Metadata.getUnits(); // All units
+const typeUnits = await Metadata.getUnits('Natural Gas'); // Units for specific type
 ```
 
-### Get Supported Areas
-
-```javascript
-import { LocationEmission } from 'emissions-api-sdk';
-
-// Get supported geographical areas
-const areas = await LocationEmission.getArea();
-```
-
-### Get Valid Units
-
-```javascript
-import { LocationEmission } from 'emissions-api-sdk';
-
-// Get valid units for a specific emission type
-const units = await LocationEmission.getUnits("electricity");
-```
+**Supported endpoints**: `calculation`, `location`, `stationary`, `mobile`, `fugitive`, `factor`, `search`, `transportation-and-distribution`, `economic-activity`, `real-estate`
 
 ### Get Organization Usage
 ```javascript
 import { Usage } from 'emissions-api-sdk';
 
-// Retrieves current billing period or historical usage data for the Organization 
+// Retrieves current billing period or historical usage data for the Organization
 // History Flag to retrieve current billing or historical usage data.
-const units = await Usage.getUsage(true);
+const usage = await Usage.getUsage(true);
 ```
 
 ## Authentication
