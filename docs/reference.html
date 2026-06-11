@@ -200,6 +200,8 @@
 <li class="toctree-l2"><a class="reference internal" href="authentication.html">Authentication</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client.html">Client</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting Guide</a></li>
 </ul>
@@ -535,6 +537,99 @@ Only refreshes if the token was not provided by the user and is expiring within 
 </dd></dl>
 
 <dl class="js function">
+<dt class="sig sig-object js" id="Factor.search">
+<span class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">Factor</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">search</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Factor.search" title="Link to this definition">¶</a></dt>
+<dd><p>Performs a search operation by making a POST request to the search API endpoint.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>payload</strong> (<span class="sphinx_js-type">SearchRequest</span>) – The search request data to be sent to the API</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;SearchResponse&gt;</span> – A promise that resolves to the search results returned by the API</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="c1">// Basic search</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">searchRequest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="s2">&quot;time&quot;</span><span class="o">:</span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;date&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2020-06-10&quot;</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="s2">&quot;activity&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;search&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;travel&quot;</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="s2">&quot;location&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;country&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;USA&quot;</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="w"> </span><span class="p">};</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">results</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">search</span><span class="p">(</span><span class="nx">searchRequest</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="c1">// Search with optional unit parameter</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">searchWithUnit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="s2">&quot;time&quot;</span><span class="o">:</span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;date&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2020-06-10&quot;</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="s2">&quot;activity&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;search&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;electricity&quot;</span><span class="p">,</span>
+<span class="w">     </span><span class="s2">&quot;unit&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;kWh&quot;</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="s2">&quot;location&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;country&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;USA&quot;</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="w"> </span><span class="p">};</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">results</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">search</span><span class="p">(</span><span class="nx">searchWithUnit</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="c1">// Search with optional scope parameter</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">searchWithScope</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="s2">&quot;time&quot;</span><span class="o">:</span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;date&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2020-06-10&quot;</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="s2">&quot;activity&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;search&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;natural gas&quot;</span><span class="p">,</span>
+<span class="w">     </span><span class="s2">&quot;scope&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="s2">&quot;location&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;country&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;USA&quot;</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="w"> </span><span class="p">};</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">results</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">search</span><span class="p">(</span><span class="nx">searchWithScope</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="c1">// Search with both unit and scope parameters</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">searchWithBoth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="s2">&quot;time&quot;</span><span class="o">:</span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;date&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2020-06-10&quot;</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="s2">&quot;activity&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;search&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;electricity&quot;</span><span class="p">,</span>
+<span class="w">     </span><span class="s2">&quot;unit&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;MWh&quot;</span><span class="p">,</span>
+<span class="w">     </span><span class="s2">&quot;scope&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2&quot;</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="s2">&quot;location&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;country&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;USA&quot;</span><span class="p">,</span>
+<span class="w">     </span><span class="s2">&quot;stateProvince&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;california&quot;</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="w"> </span><span class="p">};</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">results</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">search</span><span class="p">(</span><span class="nx">searchWithBoth</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="js function">
 <dt class="sig sig-object js" id="Fugitive.calculate">
 <span class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">Fugitive</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">calculate</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Fugitive.calculate" title="Link to this definition">¶</a></dt>
 <dd><p>Performs scope 1 fugitve emission calculations by making a POST request to the fugitive API endpoint.</p>
@@ -827,13 +922,137 @@ Only refreshes if the token was not provided by the user and is expiring within 
 </dd></dl>
 
 </section>
+<section id="type-recommender-api">
+<h2>Type Recommender API<a class="headerlink" href="#type-recommender-api" title="Link to this heading">¶</a></h2>
+<dl class="js function">
+<dt class="sig sig-object js" id="TypeRecommender.search">
+<span class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">TypeRecommender</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">search</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TypeRecommender.search" title="Link to this definition">¶</a></dt>
+<dd><p>Search for activity types using semantic search with location, time, and license context. Supports pagination.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>payload</strong> (<span class="sphinx_js-type">SearchRequest</span>) – The search request data to be sent to the API</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;TypeRecommenderResponse&gt;</span> – A promise that resolves to the activity types returned by the API</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="c1">// Basic search</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">search</span><span class="p">({</span>
+<span class="w">   </span><span class="s2">&quot;location&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;country&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;usa&quot;</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="s2">&quot;activity&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;search&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;electricity&quot;</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="w"> </span><span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="c1">// Search with time and pagination</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">search</span><span class="p">({</span>
+<span class="w">   </span><span class="s2">&quot;location&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;country&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;usa&quot;</span><span class="p">,</span>
+<span class="w">     </span><span class="s2">&quot;stateProvince&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;california&quot;</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="s2">&quot;time&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;date&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2025-06-10&quot;</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="s2">&quot;activity&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;search&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;electricity&quot;</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="s2">&quot;pagination&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;page&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
+<span class="w">     </span><span class="s2">&quot;size&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">10</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="w"> </span><span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="c1">// Search with power grid</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">search</span><span class="p">({</span>
+<span class="w">   </span><span class="s2">&quot;location&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;country&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;usa&quot;</span><span class="p">,</span>
+<span class="w">     </span><span class="s2">&quot;powerGrid&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;WECC&quot;</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="s2">&quot;activity&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;search&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;renewable energy&quot;</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="w"> </span><span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="c1">// Search with optional unit parameter</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">search</span><span class="p">({</span>
+<span class="w">   </span><span class="s2">&quot;location&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;country&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;usa&quot;</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="s2">&quot;activity&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;search&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;electricity&quot;</span><span class="p">,</span>
+<span class="w">     </span><span class="s2">&quot;unit&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;kWh&quot;</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="w"> </span><span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="c1">// Search with optional scope parameter</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">search</span><span class="p">({</span>
+<span class="w">   </span><span class="s2">&quot;location&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;country&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;usa&quot;</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="s2">&quot;activity&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;search&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;natural gas&quot;</span><span class="p">,</span>
+<span class="w">     </span><span class="s2">&quot;scope&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="w"> </span><span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="c1">// Search with both unit and scope parameters</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">search</span><span class="p">({</span>
+<span class="w">   </span><span class="s2">&quot;location&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;country&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;usa&quot;</span><span class="p">,</span>
+<span class="w">     </span><span class="s2">&quot;stateProvince&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;california&quot;</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="s2">&quot;time&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;date&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2025-06-10&quot;</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="s2">&quot;activity&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;search&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;electricity&quot;</span><span class="p">,</span>
+<span class="w">     </span><span class="s2">&quot;unit&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;MWh&quot;</span><span class="p">,</span>
+<span class="w">     </span><span class="s2">&quot;scope&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2&quot;</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="s2">&quot;pagination&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;page&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
+<span class="w">     </span><span class="s2">&quot;size&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">10</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="w"> </span><span class="p">});</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+</section>
 <section id="audit-log-api">
 <h2>Audit Log API<a class="headerlink" href="#audit-log-api" title="Link to this heading">¶</a></h2>
 <p>Controls whether the organization’s API requests and responses are stored for auditing.
 Organizations can disable storage if they don’t need their API calls to be audited.</p>
 <dl class="js function">
-<dt class="sig sig-object js" id="AuditLog.getConfig">
-<span class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">AuditLog</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">getConfig</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#AuditLog.getConfig" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="AuditLog.getAuditConfig">
+<span class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">AuditLog</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">getAuditConfig</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#AuditLog.getAuditConfig" title="Link to this definition">¶</a></dt>
 <dd><p>Retrieves the audit log configuration for the organization.</p>
 <p>Controls whether the organization’s API requests and responses are stored for auditing.
 Organizations can disable this if they don’t need their API calls to be audited.</p>
@@ -852,11 +1071,14 @@ Organizations can disable this if they don’t need their API calls to be audite
 </dd></dl>
 
 <dl class="js function">
-<dt class="sig sig-object js" id="AuditLog.update">
-<span class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">AuditLog</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">update</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AuditLog.update" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="AuditLog.updateAuditConfig">
+<span class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">AuditLog</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">updateAuditConfig</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AuditLog.updateAuditConfig" title="Link to this definition">¶</a></dt>
 <dd><p>Updates the audit log configuration for the organization.</p>
 <p>Controls whether the organization’s API requests and responses are stored for auditing.
 Organizations can disable this if they don’t need their API calls to be audited.</p>
+<p>Note: If the configuration is already set to the requested values, the API will return
+a 409 Conflict status with a message indicating no change was made. This is handled
+gracefully and the current configuration is returned.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -864,12 +1086,14 @@ Organizations can disable this if they don’t need their API calls to be audite
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;AuditLogResponse&gt;</span> – Updated configuration</p>
+<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;AuditLogResponse&gt;</span> – Updated configuration or current configuration if no change</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">update</span><span class="p">({</span><span class="w"> </span><span class="nx">logRequest</span><span class="o">:</span><span class="w"> </span><span class="kt">false</span><span class="p">,</span><span class="w"> </span><span class="nx">logResponse</span><span class="o">:</span><span class="w"> </span><span class="kt">false</span><span class="w"> </span><span class="p">});</span>
+<span class="c1">// If already set to these values:</span>
+<span class="c1">// { logRequest: false, logResponse: false, message: &quot;No change in audit log configuration&quot; }</span>
 </pre></div>
 </div>
 </div>
@@ -1391,6 +1615,7 @@ Used to configure which parts of API interactions should be logged.</p>
 <li><a class="reference internal" href="#utils.findExpiryTime"><code class="docutils literal notranslate"><span class="pre">utils.findExpiryTime()</span></code></a></li>
 <li><a class="reference internal" href="#api">API</a><ul>
 <li><a class="reference internal" href="#Factor.retrieveFactor"><code class="docutils literal notranslate"><span class="pre">Factor.retrieveFactor()</span></code></a></li>
+<li><a class="reference internal" href="#Factor.search"><code class="docutils literal notranslate"><span class="pre">Factor.search()</span></code></a></li>
 <li><a class="reference internal" href="#Fugitive.calculate"><code class="docutils literal notranslate"><span class="pre">Fugitive.calculate()</span></code></a></li>
 <li><a class="reference internal" href="#Calculation.calculate"><code class="docutils literal notranslate"><span class="pre">Calculation.calculate()</span></code></a></li>
 <li><a class="reference internal" href="#Location.calculate"><code class="docutils literal notranslate"><span class="pre">Location.calculate()</span></code></a></li>
@@ -1401,9 +1626,13 @@ Used to configure which parts of API interactions should be logged.</p>
 <li><a class="reference internal" href="#EconomicActivity.calculate"><code class="docutils literal notranslate"><span class="pre">EconomicActivity.calculate()</span></code></a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#type-recommender-api">Type Recommender API</a><ul>
+<li><a class="reference internal" href="#TypeRecommender.search"><code class="docutils literal notranslate"><span class="pre">TypeRecommender.search()</span></code></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#audit-log-api">Audit Log API</a><ul>
-<li><a class="reference internal" href="#AuditLog.getConfig"><code class="docutils literal notranslate"><span class="pre">AuditLog.getConfig()</span></code></a></li>
-<li><a class="reference internal" href="#AuditLog.update"><code class="docutils literal notranslate"><span class="pre">AuditLog.update()</span></code></a></li>
+<li><a class="reference internal" href="#AuditLog.getAuditConfig"><code class="docutils literal notranslate"><span class="pre">AuditLog.getAuditConfig()</span></code></a></li>
+<li><a class="reference internal" href="#AuditLog.updateAuditConfig"><code class="docutils literal notranslate"><span class="pre">AuditLog.updateAuditConfig()</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#global-metadata-api">Global Metadata API</a><ul>

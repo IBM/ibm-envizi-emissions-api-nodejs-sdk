@@ -200,6 +200,8 @@
 <li class="toctree-l2"><a class="reference internal" href="authentication.html">Authentication</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client.html">Client</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reference.html">Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting Guide</a></li>
 </ul>
@@ -251,6 +253,7 @@
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#authentication">Authentication</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#first-api-call">First API Call</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#example-response">Example Response</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#example-response-with-details">Example Response with Details</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="sdk.html">SDK</a><ul>
@@ -258,11 +261,31 @@
 <li class="toctree-l2"><a class="reference internal" href="authentication.html">Authentication</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="authentication.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authentication.html#authentication-methods">Authentication Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authentication.html#authentication-flow">Authentication Flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authentication.html#authentication-headers">Authentication Headers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authentication.html#architecture-diagram">Architecture Diagram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authentication.html#security-best-practices">Security Best Practices</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="client.html">Client</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="client.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client.html#client-initialization">Client Initialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client.html#configuration-options">Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client.html#client-responsibilities">Client Responsibilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client.html#error-handling">Error Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client.html#best-practices">Best Practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client.html#authentication-integration">Authentication Integration</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="reference.html">Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="reference.html#Client"><code class="docutils literal notranslate"><span class="pre">Client</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="reference.html#request.makeApiRequest"><code class="docutils literal notranslate"><span class="pre">request.makeApiRequest()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="reference.html#utils.findExpiryTime"><code class="docutils literal notranslate"><span class="pre">utils.findExpiryTime()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="reference.html#api">API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#type-recommender-api">Type Recommender API</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reference.html#audit-log-api">Audit Log API</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reference.html#global-metadata-api">Global Metadata API</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reference.html#usage-api">Usage API</a></li>
@@ -302,6 +325,16 @@
 <li><p><strong>Generic</strong> – custom emission calculations</p></li>
 </ul>
 <p>The SDK is designed for embedding emission calculations in applications, building sustainability dashboards, automating large-scale datasets, and tracking carbon footprints.</p>
+</section>
+<section id="additional-capabilities">
+<h2>Additional capabilities<a class="headerlink" href="#additional-capabilities" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Metadata API</strong> – query supported types, areas, and units across endpoints</p></li>
+<li><p><strong>Type Recommender API</strong> – semantic search to identify likely activity types</p></li>
+<li><p><strong>Factor Search API</strong> – search for emission factors with unit and scope filtering</p></li>
+<li><p><strong>Usage API</strong> – retrieve organization billing-period or historical usage</p></li>
+<li><p><strong>Audit Log API</strong> – manage whether API requests and responses are stored for auditing</p></li>
+</ul>
 </section>
 </section>
 

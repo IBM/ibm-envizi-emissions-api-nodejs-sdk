@@ -7,6 +7,8 @@ IBM Envizi - Emissions API Node.js SDK
 
    getting_started
    sdk
+   authentication
+   client
    reference
    troubleshooting
 
@@ -30,3 +32,12 @@ Supported Emission Types
 * **Generic** – custom emission calculations
 
 The SDK is designed for embedding emission calculations in applications, building sustainability dashboards, automating large-scale datasets, and tracking carbon footprints.
+
+Additional capabilities
+-----------------------
+
+* **Metadata API** – query supported types, areas, and units across endpoints
+* **Type Recommender API** – semantic search to identify likely activity types
+* **Factor Search API** – search for emission factors with unit and scope filtering
+* **Usage API** – retrieve organization billing-period or historical usage
+* **Audit Log API** – manage whether API requests and responses are stored for auditing

@@ -214,5 +214,3 @@ describe('AuditLog - getAuditConfig Error Handling', () => {
     await expect(getAuditConfig()).rejects.toThrow('Network error');
   });
 });
-
-// Made with Bob

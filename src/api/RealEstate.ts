@@ -14,6 +14,7 @@ import { makeApiRequest } from "../request";
  * @throws {Error} May throw an error if the API request fails
  *
  * @example
+ * // Basic request without attribution
  * const request = {
     "time": {
       "date": "2025-01-04"
@@ -29,6 +30,28 @@ import { makeApiRequest } from "../request";
     "includeDetails": false
   };
  * const result = await calculate(request);
+ *
+ * @example
+ * // Request with attribution (property value based)
+ * const requestWithAttribution = {
+    "time": {
+      "date": "2022-01-01"
+    },
+    "location": {
+      "country": "usa",
+      "stateProvince": "new york"
+    },
+    "activity": {
+      "type": "Commercial Real Estate:Office",
+      "value": 123456.0,
+      "unit": "m2"
+    },
+    "attribution": {
+      "outstandingAmount": 1000000.0,
+      "propertyValue": 5000000.0
+    },
+    "includeDetails": true
+  };
  */
 
 export async function calculate(

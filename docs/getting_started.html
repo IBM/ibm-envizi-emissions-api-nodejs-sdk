@@ -200,6 +200,8 @@
 <li class="toctree-l2"><a class="reference internal" href="authentication.html">Authentication</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client.html">Client</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reference.html">Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting Guide</a></li>
 </ul>
@@ -248,8 +250,9 @@
 <ul class="simple">
 <li><p><strong>Node.js</strong> installed</p></li>
 <li><p>Active internet connection</p></li>
-<li><p>Sign up for the preview waitlist <a class="reference external" href="https://www.ibm.com/account/reg/us-en/signup?formid=urx-53659">IBMid sign up</a> page.</p></li>
-<li><p>API credentials (<code class="docutils literal notranslate"><span class="pre">apiKey</span></code>, <code class="docutils literal notranslate"><span class="pre">tenantId</span></code>, <code class="docutils literal notranslate"><span class="pre">orgId</span></code>), are available on the Emissions API <a class="reference external" href="https://www-dev.supply-chain.ibm.com/envizi/emissions-api-home/overview?cuiURL=%2Femissions-api-home%2Foverview">Overview Page</a> after sign up</p></li>
+<li><p>An IBMid account. Sign up at the <a class="reference external" href="https://www.ibm.com/account/reg/us-en/signup?formid=urx-54311">IBMid sign up</a> page.</p></li>
+<li><p>Access to the Emissions API service and the required credentials</p></li>
+<li><p>Read the <a class="reference external" href="https://developer.ibm.com/apis/catalog/ghgemissions--ibm-envizi-emissions-api/Introduction">Introduction</a> page for an overview of the Emissions API</p></li>
 </ul>
 </section>
 <section id="installation">
@@ -277,103 +280,72 @@
 </section>
 <section id="authentication">
 <h2>Authentication<a class="headerlink" href="#authentication" title="Link to this heading">¶</a></h2>
-<p>Initialize the client with your API credentials:</p>
-<p>The SDK provides two authentication methods:</p>
+<p>The SDK supports three authentication methods:</p>
 <ul class="simple">
-<li><dl class="simple">
-<dt>Using an <strong>API key</strong> with following required Headers:</dt><dd><ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">X-Api-Key</span></code>: Your API key</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">X-IBM-Client-Id</span></code>: saascore-{your-client-id}</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">accept</span></code>: application/json</p></li>
+<li><p><strong>Personal Access Token (PAT)</strong>, recommended for most users</p></li>
+<li><p><strong>API key</strong>, where the SDK retrieves and refreshes a bearer token</p></li>
+<li><p><strong>Pre-generated JWT token</strong>, managed outside the SDK</p></li>
 </ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>Using a <strong>Pre-generated token</strong></dt><dd><ul>
-<li><p>Token Generation Endpoint: <a class="reference external" href="https://api.ibm.com/saascore/run/authentication-retrieve/api-key">https://api.ibm.com/saascore/run/authentication-retrieve/api-key</a></p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-<section id="using-api-key-recommended">
-<h3>Using API Key (Recommended)<a class="headerlink" href="#using-api-key-recommended" title="Link to this heading">¶</a></h3>
+<section id="using-personal-access-token-pat">
+<h3>Using Personal Access Token (PAT)<a class="headerlink" href="#using-personal-access-token-pat" title="Link to this heading">¶</a></h3>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Client</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;emissions-api-sdk&#39;</span><span class="p">;</span>
 
-<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">initialize</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">Client</span><span class="p">.</span><span class="nx">getClient</span><span class="p">({</span>
-<span class="w">      </span><span class="nx">apiKey</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;your-api-key&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nx">clientId</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;your-client-id&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nx">orgId</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;your-org-id&quot;</span>
-<span class="w">    </span><span class="p">});</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Client initialized successfully&quot;</span><span class="p">);</span>
-<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Failed to initialize client:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">);</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="p">}</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">Client</span><span class="p">.</span><span class="nx">getClient</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">patToken</span><span class="o">:</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">ENVIZI_PAT_TOKEN</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">clientId</span><span class="o">:</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">ENVIZI_CLIENT_ID</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When using a PAT token, do not provide <code class="docutils literal notranslate"><span class="pre">orgId</span></code>.</p>
+</div>
+</section>
+<section id="using-api-key">
+<h3>Using API Key<a class="headerlink" href="#using-api-key" title="Link to this heading">¶</a></h3>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Client</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;emissions-api-sdk&#39;</span><span class="p">;</span>
 
-<span class="nx">initialize</span><span class="p">();</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">Client</span><span class="p">.</span><span class="nx">getClient</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">apiKey</span><span class="o">:</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">ENVIZI_API_KEY</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">clientId</span><span class="o">:</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">ENVIZI_CLIENT_ID</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">orgId</span><span class="o">:</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">ENVIZI_ORG_ID</span>
+<span class="p">});</span>
 </pre></div>
 </div>
 </section>
-<section id="using-pre-generated-token">
-<h3>Using Pre-generated Token<a class="headerlink" href="#using-pre-generated-token" title="Link to this heading">¶</a></h3>
-<p>If you already have a token, you can use it directly:</p>
+<section id="using-pre-generated-jwt-token">
+<h3>Using Pre-generated JWT Token<a class="headerlink" href="#using-pre-generated-jwt-token" title="Link to this heading">¶</a></h3>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Client</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;emissions-api-sdk&#39;</span><span class="p">;</span>
 
-<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">initialize</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">Client</span><span class="p">.</span><span class="nx">getClient</span><span class="p">({</span>
-<span class="w">      </span><span class="nx">token</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;your-pre-generated-token&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nx">clientId</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;your-client-id&quot;</span>
-<span class="w">    </span><span class="p">});</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Client initialized successfully&quot;</span><span class="p">);</span>
-<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Failed to initialize client:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">);</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="p">}</span>
-
-<span class="nx">initialize</span><span class="p">();</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">Client</span><span class="p">.</span><span class="nx">getClient</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">token</span><span class="o">:</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">JWT_TOKEN</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">clientId</span><span class="o">:</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">ENVIZI_CLIENT_ID</span>
+<span class="p">});</span>
 </pre></div>
 </div>
 </section>
 </section>
 <section id="first-api-call">
 <h2>First API Call<a class="headerlink" href="#first-api-call" title="Link to this heading">¶</a></h2>
-<p>After initializing the client, you can make your first API call. Here’s an example of calculating location-based emissions:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Client</span><span class="p">,</span><span class="w"> </span><span class="nx">LocationEmission</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;emissions-api-sdk&#39;</span><span class="p">;</span>
+<p>After initializing the client, you can make your first API call. Here’s a quick start example of calculating location-based emissions:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Client</span><span class="p">,</span><span class="w"> </span><span class="nx">Location</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;emissions-api-sdk&#39;</span><span class="p">;</span>
 
-<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">calculateEmissions</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// Initialize client</span>
-<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">Client</span><span class="p">.</span><span class="nx">getClient</span><span class="p">({</span>
-<span class="w">      </span><span class="nx">apiKey</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;your-api-key&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nx">clientId</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;your-client-id&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nx">orgId</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;your-org-id&quot;</span>
-<span class="w">    </span><span class="p">});</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">Client</span><span class="p">.</span><span class="nx">getClient</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">patToken</span><span class="o">:</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">ENVIZI_PAT_TOKEN</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">clientId</span><span class="o">:</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">ENVIZI_CLIENT_ID</span>
+<span class="p">});</span>
 
-<span class="w">    </span><span class="c1">// Make API call</span>
-<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">LocationEmission</span><span class="p">.</span><span class="nx">calculate</span><span class="p">({</span>
-<span class="w">      </span><span class="s2">&quot;location&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="s2">&quot;country&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;USA&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="s2">&quot;stateProvince&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;california&quot;</span>
-<span class="w">      </span><span class="p">},</span>
-<span class="w">      </span><span class="s2">&quot;activity&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;electricity&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
-<span class="w">        </span><span class="s2">&quot;unit&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;kWh&quot;</span>
-<span class="w">      </span><span class="p">}</span>
-<span class="w">    </span><span class="p">});</span>
-
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Emission calculation result:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">result</span><span class="p">);</span>
-<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Error calculating emissions:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">Location</span><span class="p">.</span><span class="nx">calculate</span><span class="p">({</span>
+<span class="w">  </span><span class="s2">&quot;location&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;country&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;USA&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;stateProvince&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;california&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="s2">&quot;activity&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;electricity&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;unit&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;kWh&quot;</span>
 <span class="w">  </span><span class="p">}</span>
-<span class="p">}</span>
-
-<span class="nx">calculateEmissions</span><span class="p">();</span>
+<span class="p">});</span>
 </pre></div>
 </div>
 </section>
@@ -392,6 +364,96 @@
 <span class="p">}</span>
 </pre></div>
 </div>
+</section>
+<section id="example-response-with-details">
+<h2>Example Response with Details<a class="headerlink" href="#example-response-with-details" title="Link to this heading">¶</a></h2>
+<p>When you need more detailed information about the emission factors used in calculations, you can request the response to include the <code class="docutils literal notranslate"><span class="pre">details</span></code> object. This provides comprehensive information about the factor set and specific factor used:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;transactionId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;29df5ecd-fc3b-4797-b6fd-da03bc007f30&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;totalCO2e&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5912000</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;CO2&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5840000</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;CH4&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">2000.0000000000002</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;N2O&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">70000</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;indirectCO2e&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1340000</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;kgCO2e&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;The Freight - Cargo Ship - Bulk Carrier - 0-9999 dwt emissions factor used to calculate this result was obtained from the DEFRA factor set for the Global region year 2025.&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;details&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;factorSet&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEFRA&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;The UK Government and DEFRA publish GHG emission factors covering Scope 1, Scope 2, and selected Scope 3 sources. While primarily intended for UK-based reporting, many organizations apply these factors across European sites—especially for air travel-related emissions.&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;His Majesty&#39;s Government (United Kingdom of Great Britain and Northern Ireland): Department for Energy Security and Net Zero&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;sourceUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2024&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;factor&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bulk carrier - 0–9999 dwt - 2025&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Cargo ship - tonne.km&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;totalCO2e&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.02956</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;CO2&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0292</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;CH4&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00001</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;N2O&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00035</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;indirectCO2e&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0067</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;inputUnit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;t-km&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tonne.km&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;conversionRatio&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1:1&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;activityType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Freight - Cargo Ship - Bulk Carrier - 0-9999 dwt&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;activitySubtype&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Default Factor&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;factorId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">190405</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;methodology&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;activity-based&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;scopes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;3.4&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;3.9&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;areaName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Earth&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;areaType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Planet&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;publishedFrom&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-01-01&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025 Greenhouse Gas Reporting: Conversion Factors 2025 (DEFRA) provided by gov.uk, license - https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<section id="response-structure-details">
+<h3>Response Structure Details<a class="headerlink" href="#response-structure-details" title="Link to this heading">¶</a></h3>
+<p>The response includes the following key components:</p>
+<p><strong>Top-level Fields:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">transactionId</span></code>: Unique identifier for the calculation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">totalCO2e</span></code>: Total CO2 equivalent emissions</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CO2</span></code>: Carbon dioxide emissions</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CH4</span></code>: Methane emissions</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">N2O</span></code>: Nitrous oxide emissions</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">indirectCO2e</span></code>: Indirect CO2 equivalent emissions</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">unit</span></code>: Unit of measurement (typically kgCO2e)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">description</span></code>: Human-readable description of the calculation</p></li>
+</ul>
+<p><strong>Details Object (when requested):</strong></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">details</span></code> object provides comprehensive information about the emission factors:</p>
+<p><em>Factor Set Information:</em></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: Name of the factor set (e.g., DEFRA, EPA)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">description</span></code>: Detailed description of the factor set</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">provider</span></code>: Organization that provides the factor set</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sourceUrl</span></code>: URL to the source documentation</p></li>
+</ul>
+<p><em>Factor Information:</em></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: Specific name of the emission factor</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">description</span></code>: Description of the factor</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">totalCO2e</span></code>, <code class="docutils literal notranslate"><span class="pre">CO2</span></code>, <code class="docutils literal notranslate"><span class="pre">CH4</span></code>, <code class="docutils literal notranslate"><span class="pre">N2O</span></code>, <code class="docutils literal notranslate"><span class="pre">indirectCO2e</span></code>: Emission values per unit</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">inputUnit</span></code>: Unit for input values</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">unit</span></code>: Unit of the factor</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">conversionRatio</span></code>: Conversion ratio applied</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">activityType</span></code>: Type of activity (e.g., transportation, energy)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">activitySubtype</span></code>: Subtype classification</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">factorId</span></code>: Unique identifier for the factor</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">methodology</span></code>: Calculation methodology used</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scopes</span></code>: Applicable GHG Protocol scopes</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">areaName</span></code>: Geographic area name</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">areaType</span></code>: Type of geographic area</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">publishedFrom</span></code>: Date from which the factor is valid</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">source</span></code>: Source citation and license information</p></li>
+</ul>
+</section>
 </section>
 </section>
 
@@ -457,12 +519,17 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#authentication">Authentication</a><ul>
-<li><a class="reference internal" href="#using-api-key-recommended">Using API Key (Recommended)</a></li>
-<li><a class="reference internal" href="#using-pre-generated-token">Using Pre-generated Token</a></li>
+<li><a class="reference internal" href="#using-personal-access-token-pat">Using Personal Access Token (PAT)</a></li>
+<li><a class="reference internal" href="#using-api-key">Using API Key</a></li>
+<li><a class="reference internal" href="#using-pre-generated-jwt-token">Using Pre-generated JWT Token</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#first-api-call">First API Call</a></li>
 <li><a class="reference internal" href="#example-response">Example Response</a></li>
+<li><a class="reference internal" href="#example-response-with-details">Example Response with Details</a><ul>
+<li><a class="reference internal" href="#response-structure-details">Response Structure Details</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

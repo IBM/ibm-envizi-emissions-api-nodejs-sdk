@@ -1,4 +1,4 @@
-import { Activity, Location , Time, CombinedUnitsActivity, FactorActivity, SearchActivity, Pagination, FactorActivityWithFactorId, CombinedUnitsActivityWithFactorId, ActivityWithFactorId } from "./common";
+import { Activity, Location , Time, CombinedUnitsActivity, FactorActivity, SearchActivity, Pagination, FactorActivityWithFactorId, CombinedUnitsActivityWithFactorId, ActivityWithFactorId, Attribution } from "./common";
 
 /**
  * Represents activity data associated with a location, with simplified requirements.
@@ -105,7 +105,7 @@ export interface LocationRequestWithFactorId {
 /**
  * Common request parameters for calculations without specifying a factor ID.
  * Used for general-purpose calculations based on location, time, and activity data.
- * 
+ *
  * @interface CommonRequestWithoutFactorId
  */
 export interface CommonRequestWithoutFactorId {
@@ -125,17 +125,22 @@ export interface CommonRequestWithoutFactorId {
      */
     activity: Activity;
     /**
+     * Optional attribution information for FE calculations.
+     * Contains outstanding amount, property value, and currency.
+     */
+    attribution?: Attribution;
+    /**
      * Whether to include additional details in the response.
      * When true, the API will return more comprehensive information.
      * @default false
      */
     includeDetails?: boolean;
-} 
+}
 
 /**
  * Common request parameters for calculations with a specific factor ID.
  * Used when the emission factor is already known and doesn't need to be determined by location.
- * 
+ *
  * @interface CommonRequestWithFactorId
  */
 export interface CommonRequestWithFactorId {
@@ -144,12 +149,17 @@ export interface CommonRequestWithFactorId {
      */
     activity: ActivityWithFactorId;
     /**
+     * Optional attribution information for FE calculations.
+     * Contains outstanding amount, property value, and currency.
+     */
+    attribution?: Attribution;
+    /**
      * Whether to include additional details in the response.
      * When true, the API will return more comprehensive information.
      * @default false
      */
     includeDetails?: boolean;
-} 
+}
 
 /**
  * Request parameters for generic calculations without specifying a factor ID.

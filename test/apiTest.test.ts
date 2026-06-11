@@ -7,6 +7,7 @@ import * as GenericCalculation from "../src/api/Calculation";
 import * as TransportationDistributionApi from "../src/api/TransportationAndDistribution";
 import * as economicActivityApi from "../src/api/EconomicActivity";
 import * as realEstateApi from "../src/api/RealEstate";
+import * as physicalActivityApi from "../src/api/PhysicalActivity";
 import * as UsageApi from "../src/api/Usage";
 import * as Factors from "../src/api/Factor";
 import * as FactorSets from "../src/api/FactorSets";
@@ -26,6 +27,7 @@ import {
   USAGE_API,
   ECONOMIC_ACTIVITY_API_PATH,
   REAL_ESTATE_API_PATH,
+  PHYSICAL_ACTIVITY_API_PATH,
   TYPE_RECOMMENDER_API_PATH,
   AUDIT_LOG_API_PATH,
 } from "../src/Constants";
@@ -35,6 +37,9 @@ import { Client } from "../src/Client";
 import GenericCalculationPayload from "./mocks/GenericCalculationRequest";
 import FactorPayload from "./mocks/FactorRequest";
 import SearchPayload from "./mocks/SearchRequest";
+import physicalActivityPayload from "./mocks/PhysicalActivityRequest";
+import physicalActivityEVICPayload from "./mocks/PhysicalActivityEVICRequest";
+import attributionPayload from "./mocks/AttributionRequest";
 
 type ApiTestCase = {
   name: string;
@@ -110,6 +115,34 @@ const testCases: ApiTestCase[] = [
     func: realEstateApi.calculate,
     path: REAL_ESTATE_API_PATH,
     payload: commonpayload,
+    method: "POST",
+  },
+  {
+    name: "Real estate API with attribution",
+    func: realEstateApi.calculate,
+    path: REAL_ESTATE_API_PATH,
+    payload: attributionPayload,
+    method: "POST",
+  },
+  {
+    name: "Physical activity API",
+    func: physicalActivityApi.calculate,
+    path: PHYSICAL_ACTIVITY_API_PATH,
+    payload: commonpayload,
+    method: "POST",
+  },
+  {
+    name: "Physical activity API with equity/debt attribution",
+    func: physicalActivityApi.calculate,
+    path: PHYSICAL_ACTIVITY_API_PATH,
+    payload: physicalActivityPayload,
+    method: "POST",
+  },
+  {
+    name: "Physical activity API with EVIC attribution",
+    func: physicalActivityApi.calculate,
+    path: PHYSICAL_ACTIVITY_API_PATH,
+    payload: physicalActivityEVICPayload,
     method: "POST",
   },
   {
