@@ -7,6 +7,7 @@ import { makeApiRequest } from "../request";
 
 /**
  * Performs scope 3 Spend based emission calculations by making a POST request to the economic activity API endpoint.
+ * Supports optional attribution with revenue for proportional allocation.
  *
  * @export
  * @param {CommonRequest} payload - The request data to be sent to the API
@@ -14,6 +15,7 @@ import { makeApiRequest } from "../request";
  * @throws {Error} May throw an error if the API request fails
  *
  * @example
+ * // Basic economic activity request
  * const request = {
     "time": {
       "date": "2025-01-04"
@@ -29,6 +31,28 @@ import { makeApiRequest } from "../request";
     "includeDetails": false
   };
  * const result = await calculate(request);
+ *
+ * @example
+ * // Economic activity request with revenue attribution
+ * const requestWithAttribution = {
+    "time": {
+      "date": "2025-01-04"
+    },
+    "location": {
+      "country": "usa"
+    },
+    "activity": {
+      "type": "accomodation",
+      "value": 1500.12,
+      "unit": "usd"
+    },
+    "attribution": {
+      "outstandingAmount": 500000.0,
+      "revenue": 2000000.0
+    },
+    "includeDetails": true
+  };
+ * const resultWithAttribution = await calculate(requestWithAttribution);
  */
 
 export async function calculate(

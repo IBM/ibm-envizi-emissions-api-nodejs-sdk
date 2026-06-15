@@ -39,6 +39,7 @@ import FactorPayload from "./mocks/FactorRequest";
 import SearchPayload from "./mocks/SearchRequest";
 import physicalActivityPayload from "./mocks/PhysicalActivityRequest";
 import physicalActivityEVICPayload from "./mocks/PhysicalActivityEVICRequest";
+import economicActivityAttributionPayload from "./mocks/EconomicActivityAttributionRequest";
 import attributionPayload from "./mocks/AttributionRequest";
 
 type ApiTestCase = {
@@ -108,6 +109,13 @@ const testCases: ApiTestCase[] = [
     func: economicActivityApi.calculate,
     path: ECONOMIC_ACTIVITY_API_PATH,
     payload: commonpayload,
+    method: "POST",
+  },
+  {
+    name: "Economic activity API with revenue attribution",
+    func: economicActivityApi.calculate,
+    path: ECONOMIC_ACTIVITY_API_PATH,
+    payload: economicActivityAttributionPayload,
     method: "POST",
   },
   {
