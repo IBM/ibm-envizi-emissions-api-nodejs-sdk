@@ -135,3 +135,7 @@ Interfaces
 .. js:autoclass:: AuditLogResponse.AuditLogResponse
 
 .. js:autoclass:: AuditLogResponse.AuditLogRequest
+
+.. js:autoclass:: TypeRecommenderResponse.TypeRecommenderResponse
+
+.. js:autoclass:: TypeRecommenderResponse.ActivityRequest
