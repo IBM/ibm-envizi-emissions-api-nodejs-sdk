@@ -7,10 +7,12 @@ import * as GenericCalculation from "../src/api/Calculation";
 import * as TransportationDistributionApi from "../src/api/TransportationAndDistribution";
 import * as economicActivityApi from "../src/api/EconomicActivity";
 import * as realEstateApi from "../src/api/RealEstate";
+import * as physicalActivityApi from "../src/api/PhysicalActivity";
 import * as UsageApi from "../src/api/Usage";
 import * as Factors from "../src/api/Factor";
 import * as FactorSets from "../src/api/FactorSets";
 import * as VectorTypeSearch from "../src/api/TypeRecommender";
+import * as AuditLogApi from "../src/api/AuditLog";
 
 import {
   LOCATION_API_PATH,
@@ -25,7 +27,9 @@ import {
   USAGE_API,
   ECONOMIC_ACTIVITY_API_PATH,
   REAL_ESTATE_API_PATH,
+  PHYSICAL_ACTIVITY_API_PATH,
   TYPE_RECOMMENDER_API_PATH,
+  AUDIT_LOG_API_PATH,
 } from "../src/Constants";
 import locationPayload from "./mocks/LocationRequest";
 import commonpayload from "./mocks/CommonRequest";
@@ -33,6 +37,10 @@ import { Client } from "../src/Client";
 import GenericCalculationPayload from "./mocks/GenericCalculationRequest";
 import FactorPayload from "./mocks/FactorRequest";
 import SearchPayload from "./mocks/SearchRequest";
+import physicalActivityPayload from "./mocks/PhysicalActivityRequest";
+import physicalActivityEVICPayload from "./mocks/PhysicalActivityEVICRequest";
+import economicActivityAttributionPayload from "./mocks/EconomicActivityAttributionRequest";
+import attributionPayload from "./mocks/AttributionRequest";
 
 type ApiTestCase = {
   name: string;
@@ -41,7 +49,7 @@ type ApiTestCase = {
   payload?: any;
   pathParams?: string | string[];
   queryParams?: Record<string, string> | Record<string, boolean>;
-  method: "GET" | "POST";
+  method: "GET" | "POST" | "PUT";
 };
 
 const mockResp = "mock-success-response";
@@ -104,10 +112,45 @@ const testCases: ApiTestCase[] = [
     method: "POST",
   },
   {
+    name: "Economic activity API with revenue attribution",
+    func: economicActivityApi.calculate,
+    path: ECONOMIC_ACTIVITY_API_PATH,
+    payload: economicActivityAttributionPayload,
+    method: "POST",
+  },
+  {
     name: "Real estate API",
     func: realEstateApi.calculate,
     path: REAL_ESTATE_API_PATH,
     payload: commonpayload,
+    method: "POST",
+  },
+  {
+    name: "Real estate API with attribution",
+    func: realEstateApi.calculate,
+    path: REAL_ESTATE_API_PATH,
+    payload: attributionPayload,
+    method: "POST",
+  },
+  {
+    name: "Physical activity API",
+    func: physicalActivityApi.calculate,
+    path: PHYSICAL_ACTIVITY_API_PATH,
+    payload: commonpayload,
+    method: "POST",
+  },
+  {
+    name: "Physical activity API with equity/debt attribution",
+    func: physicalActivityApi.calculate,
+    path: PHYSICAL_ACTIVITY_API_PATH,
+    payload: physicalActivityPayload,
+    method: "POST",
+  },
+  {
+    name: "Physical activity API with EVIC attribution",
+    func: physicalActivityApi.calculate,
+    path: PHYSICAL_ACTIVITY_API_PATH,
+    payload: physicalActivityEVICPayload,
     method: "POST",
   },
   {
@@ -150,6 +193,19 @@ const testCases: ApiTestCase[] = [
     path: TYPE_RECOMMENDER_API_PATH,
     payload: SearchPayload,
     method: "POST",
+  },
+  {
+    name: "AuditLog API - getAuditLogConfig",
+    func: AuditLogApi.getAuditConfig,
+    path: AUDIT_LOG_API_PATH,
+    method: "GET",
+  },
+  {
+    name: "AuditLog API - updateAuditLogConfig",
+    func: AuditLogApi.updateAuditConfig,
+    path: AUDIT_LOG_API_PATH,
+    payload: { logRequest: true, logResponse: false },
+    method: "PUT",
   }
 ];
 
@@ -186,7 +242,7 @@ describe("API Test calculate functions", () => {
     ({ func, path, payload, pathParams, queryParams, method }) => {
       it("Should call makeApiRequest with API url", async () => {
         let result;
-        if (method === "POST") {
+        if (method === "POST" || method === "PUT") {
           result = await func(payload);
         } else {
           // For GET requests with queryParams
@@ -222,7 +278,7 @@ describe("API Test calculate functions", () => {
           method,
           url: expectedUrl,
         };
-        if (method === "POST") expectedRequest.data = payload;
+        if (method === "POST" || method === "PUT") expectedRequest.data = payload;
         if (method === "GET" && queryParams) expectedRequest.params = queryParams;
         expect(spy).toHaveBeenCalledWith(expectedRequest);
         expect(result).toBe(mockResp);

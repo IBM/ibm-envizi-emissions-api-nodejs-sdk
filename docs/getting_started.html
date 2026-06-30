@@ -1,14 +1,14 @@
 <!doctype html>
 <html class="no-js" lang="en" data-content_root="./">
-  <head><meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="SDK" href="sdk.html"><link rel="prev" title="IBM Envizi - Emissions API Node.js SDK" href="index.html">
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="SDK" href="sdk.html" /><link rel="prev" title="IBM Envizi - Emissions API Node.js SDK" href="index.html" />
 
-    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+    <!-- Generated with Sphinx 8.1.3 and Furo 2025.07.19 -->
         <title>Getting Started - IBM Envizi - Emissions API Node.js SDK documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=25af2a20" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx_js.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=8d04aa46" />
@@ -24,14 +24,14 @@
   }
   @media not print {
     body[data-theme="dark"] {
-      --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+      --color-code-background: #2b2b2b;
+  --color-code-foreground: #f8f8f2;
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
-        --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+        --color-code-background: #2b2b2b;
+  --color-code-foreground: #f8f8f2;
   
       }
     }
@@ -146,10 +146,14 @@
   </symbol>
 </svg>
 
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
-<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
-<label class="overlay sidebar-overlay" for="__navigation"></label>
-<label class="overlay toc-overlay" for="__toc"></label>
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
 
 <a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
 
@@ -159,7 +163,8 @@
   <header class="mobile-header">
     <div class="header-left">
       <label class="nav-overlay-icon" for="__navigation">
-        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
       </label>
     </div>
     <div class="header-center">
@@ -167,7 +172,8 @@
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
-        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
           <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
           <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
           <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
@@ -175,7 +181,8 @@
         </button>
       </div>
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
-        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
     </div>
   </header>
@@ -195,11 +202,13 @@
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Getting Started</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="sdk.html">SDK</a><input aria-label="Toggle navigation of SDK" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="sdk.html">SDK</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of SDK</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="client.html">Client</a></li>
 <li class="toctree-l2"><a class="reference internal" href="authentication.html">Authentication</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client.html">Client</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reference.html">Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting Guide</a></li>
 </ul>
@@ -228,7 +237,8 @@
   </a>
 </div>
 <div class="theme-toggle-container theme-toggle-content">
-            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
               <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
               <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
@@ -236,7 +246,8 @@
             </button>
           </div>
           <label class="toc-overlay-icon toc-content-icon" for="__toc">
-            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main" id="furo-main-content">
@@ -248,8 +259,9 @@
 <ul class="simple">
 <li><p><strong>Node.js</strong> installed</p></li>
 <li><p>Active internet connection</p></li>
-<li><p>Sign up for the preview waitlist <a class="reference external" href="https://www.ibm.com/account/reg/us-en/signup?formid=urx-53659">IBMid sign up</a> page.</p></li>
-<li><p>API credentials (<code class="docutils literal notranslate"><span class="pre">apiKey</span></code>, <code class="docutils literal notranslate"><span class="pre">tenantId</span></code>, <code class="docutils literal notranslate"><span class="pre">orgId</span></code>), are available on the Emissions API <a class="reference external" href="https://www-dev.supply-chain.ibm.com/envizi/emissions-api-home/overview?cuiURL=%2Femissions-api-home%2Foverview">Overview Page</a> after sign up</p></li>
+<li><p>An IBMid account. Sign up at the <a class="reference external" href="https://www.ibm.com/account/reg/us-en/signup?formid=urx-54311">IBMid sign up</a> page.</p></li>
+<li><p>Access to the Emissions API service and the required credentials</p></li>
+<li><p>Read the <a class="reference external" href="https://developer.ibm.com/apis/catalog/ghgemissions--ibm-envizi-emissions-api/Introduction">Introduction</a> page for an overview of the Emissions API</p></li>
 </ul>
 </section>
 <section id="installation">
@@ -277,103 +289,72 @@
 </section>
 <section id="authentication">
 <h2>Authentication<a class="headerlink" href="#authentication" title="Link to this heading">¶</a></h2>
-<p>Initialize the client with your API credentials:</p>
-<p>The SDK provides two authentication methods:</p>
+<p>The SDK supports three authentication methods:</p>
 <ul class="simple">
-<li><dl class="simple">
-<dt>Using an <strong>API key</strong> with following required Headers:</dt><dd><ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">X-Api-Key</span></code>: Your API key</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">X-IBM-Client-Id</span></code>: saascore-{your-client-id}</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">accept</span></code>: application/json</p></li>
+<li><p><strong>Personal Access Token (PAT)</strong>, recommended for most users</p></li>
+<li><p><strong>API key</strong>, where the SDK retrieves and refreshes a bearer token</p></li>
+<li><p><strong>Pre-generated JWT token</strong>, managed outside the SDK</p></li>
 </ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>Using a <strong>Pre-generated token</strong></dt><dd><ul>
-<li><p>Token Generation Endpoint: <a class="reference external" href="https://api.ibm.com/saascore/run/authentication-retrieve/api-key">https://api.ibm.com/saascore/run/authentication-retrieve/api-key</a></p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-<section id="using-api-key-recommended">
-<h3>Using API Key (Recommended)<a class="headerlink" href="#using-api-key-recommended" title="Link to this heading">¶</a></h3>
+<section id="using-personal-access-token-pat">
+<h3>Using Personal Access Token (PAT)<a class="headerlink" href="#using-personal-access-token-pat" title="Link to this heading">¶</a></h3>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Client</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;emissions-api-sdk&#39;</span><span class="p">;</span>
 
-<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">initialize</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">Client</span><span class="p">.</span><span class="nx">getClient</span><span class="p">({</span>
-<span class="w">      </span><span class="nx">apiKey</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;your-api-key&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nx">clientId</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;your-client-id&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nx">orgId</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;your-org-id&quot;</span>
-<span class="w">    </span><span class="p">});</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Client initialized successfully&quot;</span><span class="p">);</span>
-<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Failed to initialize client:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">);</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="p">}</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">Client</span><span class="p">.</span><span class="nx">getClient</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">patToken</span><span class="o">:</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">ENVIZI_PAT_TOKEN</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">clientId</span><span class="o">:</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">ENVIZI_CLIENT_ID</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When using a PAT token, do not provide <code class="docutils literal notranslate"><span class="pre">orgId</span></code>.</p>
+</div>
+</section>
+<section id="using-api-key">
+<h3>Using API Key<a class="headerlink" href="#using-api-key" title="Link to this heading">¶</a></h3>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Client</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;emissions-api-sdk&#39;</span><span class="p">;</span>
 
-<span class="nx">initialize</span><span class="p">();</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">Client</span><span class="p">.</span><span class="nx">getClient</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">apiKey</span><span class="o">:</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">ENVIZI_API_KEY</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">clientId</span><span class="o">:</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">ENVIZI_CLIENT_ID</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">orgId</span><span class="o">:</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">ENVIZI_ORG_ID</span>
+<span class="p">});</span>
 </pre></div>
 </div>
 </section>
-<section id="using-pre-generated-token">
-<h3>Using Pre-generated Token<a class="headerlink" href="#using-pre-generated-token" title="Link to this heading">¶</a></h3>
-<p>If you already have a token, you can use it directly:</p>
+<section id="using-pre-generated-jwt-token">
+<h3>Using Pre-generated JWT Token<a class="headerlink" href="#using-pre-generated-jwt-token" title="Link to this heading">¶</a></h3>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Client</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;emissions-api-sdk&#39;</span><span class="p">;</span>
 
-<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">initialize</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">Client</span><span class="p">.</span><span class="nx">getClient</span><span class="p">({</span>
-<span class="w">      </span><span class="nx">token</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;your-pre-generated-token&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nx">clientId</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;your-client-id&quot;</span>
-<span class="w">    </span><span class="p">});</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Client initialized successfully&quot;</span><span class="p">);</span>
-<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Failed to initialize client:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">);</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="p">}</span>
-
-<span class="nx">initialize</span><span class="p">();</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">Client</span><span class="p">.</span><span class="nx">getClient</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">token</span><span class="o">:</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">JWT_TOKEN</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">clientId</span><span class="o">:</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">ENVIZI_CLIENT_ID</span>
+<span class="p">});</span>
 </pre></div>
 </div>
 </section>
 </section>
 <section id="first-api-call">
 <h2>First API Call<a class="headerlink" href="#first-api-call" title="Link to this heading">¶</a></h2>
-<p>After initializing the client, you can make your first API call. Here’s an example of calculating location-based emissions:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Client</span><span class="p">,</span><span class="w"> </span><span class="nx">LocationEmission</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;emissions-api-sdk&#39;</span><span class="p">;</span>
+<p>After initializing the client, you can make your first API call. Here’s a quick start example of calculating location-based emissions:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Client</span><span class="p">,</span><span class="w"> </span><span class="nx">Location</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;emissions-api-sdk&#39;</span><span class="p">;</span>
 
-<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">calculateEmissions</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// Initialize client</span>
-<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">Client</span><span class="p">.</span><span class="nx">getClient</span><span class="p">({</span>
-<span class="w">      </span><span class="nx">apiKey</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;your-api-key&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nx">clientId</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;your-client-id&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nx">orgId</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;your-org-id&quot;</span>
-<span class="w">    </span><span class="p">});</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">Client</span><span class="p">.</span><span class="nx">getClient</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">patToken</span><span class="o">:</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">ENVIZI_PAT_TOKEN</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">clientId</span><span class="o">:</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">ENVIZI_CLIENT_ID</span>
+<span class="p">});</span>
 
-<span class="w">    </span><span class="c1">// Make API call</span>
-<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">LocationEmission</span><span class="p">.</span><span class="nx">calculate</span><span class="p">({</span>
-<span class="w">      </span><span class="s2">&quot;location&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="s2">&quot;country&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;USA&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="s2">&quot;stateProvince&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;california&quot;</span>
-<span class="w">      </span><span class="p">},</span>
-<span class="w">      </span><span class="s2">&quot;activity&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;electricity&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
-<span class="w">        </span><span class="s2">&quot;unit&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;kWh&quot;</span>
-<span class="w">      </span><span class="p">}</span>
-<span class="w">    </span><span class="p">});</span>
-
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Emission calculation result:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">result</span><span class="p">);</span>
-<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Error calculating emissions:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">Location</span><span class="p">.</span><span class="nx">calculate</span><span class="p">({</span>
+<span class="w">  </span><span class="s2">&quot;location&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;country&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;USA&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;stateProvince&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;california&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="s2">&quot;activity&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;electricity&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;unit&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;kWh&quot;</span>
 <span class="w">  </span><span class="p">}</span>
-<span class="p">}</span>
-
-<span class="nx">calculateEmissions</span><span class="p">();</span>
+<span class="p">});</span>
 </pre></div>
 </div>
 </section>
@@ -392,6 +373,656 @@
 <span class="p">}</span>
 </pre></div>
 </div>
+</section>
+<section id="example-response-with-details">
+<h2>Example Response with Details<a class="headerlink" href="#example-response-with-details" title="Link to this heading">¶</a></h2>
+<p>When you need more detailed information about the emission factors used in calculations, you can request the response to include the <code class="docutils literal notranslate"><span class="pre">details</span></code> object. This provides comprehensive information about the factor set and specific factor used:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;transactionId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;29df5ecd-fc3b-4797-b6fd-da03bc007f30&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;totalCO2e&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5912000</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;CO2&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5840000</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;CH4&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">2000.0000000000002</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;N2O&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">70000</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;indirectCO2e&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1340000</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;kgCO2e&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;The Freight - Cargo Ship - Bulk Carrier - 0-9999 dwt emissions factor used to calculate this result was obtained from the DEFRA factor set for the Global region year 2025.&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;details&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;factorSet&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEFRA&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;The UK Government and DEFRA publish GHG emission factors covering Scope 1, Scope 2, and selected Scope 3 sources. While primarily intended for UK-based reporting, many organizations apply these factors across European sites—especially for air travel-related emissions.&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;His Majesty&#39;s Government (United Kingdom of Great Britain and Northern Ireland): Department for Energy Security and Net Zero&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;sourceUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2024&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;factor&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bulk carrier - 0–9999 dwt - 2025&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Cargo ship - tonne.km&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;totalCO2e&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.02956</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;CO2&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0292</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;CH4&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00001</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;N2O&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00035</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;indirectCO2e&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0067</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;inputUnit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;t-km&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tonne.km&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;conversionRatio&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1:1&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;activityType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Freight - Cargo Ship - Bulk Carrier - 0-9999 dwt&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;activitySubtype&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Default Factor&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;factorId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">190405</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;methodology&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;activity-based&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;scopes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;3.4&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;3.9&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;areaName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Earth&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;areaType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Planet&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;publishedFrom&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-01-01&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025 Greenhouse Gas Reporting: Conversion Factors 2025 (DEFRA) provided by gov.uk, license - https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<section id="response-structure-details">
+<h3>Response Structure Details<a class="headerlink" href="#response-structure-details" title="Link to this heading">¶</a></h3>
+<p>The response includes the following key components:</p>
+<p><strong>Top-level Fields:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">transactionId</span></code>: Unique identifier for the calculation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">totalCO2e</span></code>: Total CO2 equivalent emissions</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CO2</span></code>: Carbon dioxide emissions</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CH4</span></code>: Methane emissions</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">N2O</span></code>: Nitrous oxide emissions</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">indirectCO2e</span></code>: Indirect CO2 equivalent emissions</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">unit</span></code>: Unit of measurement (typically kgCO2e)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">description</span></code>: Human-readable description of the calculation</p></li>
+</ul>
+<p><strong>Details Object (when requested):</strong></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">details</span></code> object provides comprehensive information about the emission factors:</p>
+<p><em>Factor Set Information:</em></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: Name of the factor set (e.g., DEFRA, EPA)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">description</span></code>: Detailed description of the factor set</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">provider</span></code>: Organization that provides the factor set</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sourceUrl</span></code>: URL to the source documentation</p></li>
+</ul>
+<p><em>Factor Information:</em></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: Specific name of the emission factor</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">description</span></code>: Description of the factor</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">totalCO2e</span></code>, <code class="docutils literal notranslate"><span class="pre">CO2</span></code>, <code class="docutils literal notranslate"><span class="pre">CH4</span></code>, <code class="docutils literal notranslate"><span class="pre">N2O</span></code>, <code class="docutils literal notranslate"><span class="pre">indirectCO2e</span></code>: Emission values per unit</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">inputUnit</span></code>: Unit for input values</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">unit</span></code>: Unit of the factor</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">conversionRatio</span></code>: Conversion ratio applied</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">activityType</span></code>: Type of activity (e.g., transportation, energy)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">activitySubtype</span></code>: Subtype classification</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">factorId</span></code>: Unique identifier for the factor</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">methodology</span></code>: Calculation methodology used</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scopes</span></code>: Applicable GHG Protocol scopes</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">areaName</span></code>: Geographic area name</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">areaType</span></code>: Type of geographic area</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">publishedFrom</span></code>: Date from which the factor is valid</p></li>
+</ul>
+</section>
+</section>
+<section id="currency-conversion-support">
+<h2>Currency Conversion Support<a class="headerlink" href="#currency-conversion-support" title="Link to this heading">¶</a></h2>
+<section id="overview">
+<h3>Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h3>
+<p>The SDK supports automatic currency conversion for API methods that accept monetary values. This feature allows you to input values in your preferred currency, and the system will automatically convert them to the appropriate base currency for emissions calculations.</p>
+<p><strong>Supported Methods</strong></p>
+<p>Currency conversion is available for the following calculation methods:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">EconomicActivity.calculate()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RealEstate.calculate()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PhysicalActivity.calculate()</span></code></p></li>
+</ul>
+</section>
+<section id="supported-currencies">
+<h3>Supported Currencies<a class="headerlink" href="#supported-currencies" title="Link to this heading">¶</a></h3>
+<p>The SDK supports conversion for 170 currencies:</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 60.0%" />
+<col style="width: 40.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Currency Name</p></th>
+<th class="head"><p>Symbol</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ADB Unit of Account</p></td>
+<td><p>XUA</p></td>
+</tr>
+<tr class="row-odd"><td><p>Afghani</p></td>
+<td><p>AFN</p></td>
+</tr>
+<tr class="row-even"><td><p>Algerian Dinar</p></td>
+<td><p>DZD</p></td>
+</tr>
+<tr class="row-odd"><td><p>Arab Accounting Dinar</p></td>
+<td><p>XAD</p></td>
+</tr>
+<tr class="row-even"><td><p>Argentine Peso</p></td>
+<td><p>ARS</p></td>
+</tr>
+<tr class="row-odd"><td><p>Armenian Dram</p></td>
+<td><p>AMD</p></td>
+</tr>
+<tr class="row-even"><td><p>Aruban Florin</p></td>
+<td><p>AWG</p></td>
+</tr>
+<tr class="row-odd"><td><p>Australian Dollar</p></td>
+<td><p>AUD</p></td>
+</tr>
+<tr class="row-even"><td><p>Azerbaijan Manat</p></td>
+<td><p>AZN</p></td>
+</tr>
+<tr class="row-odd"><td><p>Bahamian Dollar</p></td>
+<td><p>BSD</p></td>
+</tr>
+<tr class="row-even"><td><p>Bahraini Dinar</p></td>
+<td><p>BHD</p></td>
+</tr>
+<tr class="row-odd"><td><p>Baht</p></td>
+<td><p>THB</p></td>
+</tr>
+<tr class="row-even"><td><p>Balboa</p></td>
+<td><p>PAB</p></td>
+</tr>
+<tr class="row-odd"><td><p>Barbados Dollar</p></td>
+<td><p>BBD</p></td>
+</tr>
+<tr class="row-even"><td><p>Belarusian Ruble</p></td>
+<td><p>BYN</p></td>
+</tr>
+<tr class="row-odd"><td><p>Belize Dollar</p></td>
+<td><p>BZD</p></td>
+</tr>
+<tr class="row-even"><td><p>Bermudian Dollar</p></td>
+<td><p>BMD</p></td>
+</tr>
+<tr class="row-odd"><td><p>Boliviano</p></td>
+<td><p>BOB</p></td>
+</tr>
+<tr class="row-even"><td><p>Bolívar Soberano</p></td>
+<td><p>VED</p></td>
+</tr>
+<tr class="row-odd"><td><p>Bolívar Soberano</p></td>
+<td><p>VES</p></td>
+</tr>
+<tr class="row-even"><td><p>Brazilian Real</p></td>
+<td><p>BRL</p></td>
+</tr>
+<tr class="row-odd"><td><p>Brunei Dollar</p></td>
+<td><p>BND</p></td>
+</tr>
+<tr class="row-even"><td><p>Bulgarian Lev</p></td>
+<td><p>BGN</p></td>
+</tr>
+<tr class="row-odd"><td><p>Burundi Franc</p></td>
+<td><p>BIF</p></td>
+</tr>
+<tr class="row-even"><td><p>Cabo Verde Escudo</p></td>
+<td><p>CVE</p></td>
+</tr>
+<tr class="row-odd"><td><p>Canadian Dollar</p></td>
+<td><p>CAD</p></td>
+</tr>
+<tr class="row-even"><td><p>Caribbean Guilder</p></td>
+<td><p>XCG</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cayman Islands Dollar</p></td>
+<td><p>KYD</p></td>
+</tr>
+<tr class="row-even"><td><p>CFA Franc BCEAO</p></td>
+<td><p>XOF</p></td>
+</tr>
+<tr class="row-odd"><td><p>CFA Franc BEAC</p></td>
+<td><p>XAF</p></td>
+</tr>
+<tr class="row-even"><td><p>CFP Franc</p></td>
+<td><p>XPF</p></td>
+</tr>
+<tr class="row-odd"><td><p>Chilean Peso</p></td>
+<td><p>CLP</p></td>
+</tr>
+<tr class="row-even"><td><p>Colombian Peso</p></td>
+<td><p>COP</p></td>
+</tr>
+<tr class="row-odd"><td><p>Comorian Franc</p></td>
+<td><p>KMF</p></td>
+</tr>
+<tr class="row-even"><td><p>Congolese Franc</p></td>
+<td><p>CDF</p></td>
+</tr>
+<tr class="row-odd"><td><p>Convertible Mark</p></td>
+<td><p>BAM</p></td>
+</tr>
+<tr class="row-even"><td><p>Cordoba Oro</p></td>
+<td><p>NIO</p></td>
+</tr>
+<tr class="row-odd"><td><p>Costa Rican Colon</p></td>
+<td><p>CRC</p></td>
+</tr>
+<tr class="row-even"><td><p>Cuban Peso</p></td>
+<td><p>CUP</p></td>
+</tr>
+<tr class="row-odd"><td><p>Czech Koruna</p></td>
+<td><p>CZK</p></td>
+</tr>
+<tr class="row-even"><td><p>Dalasi</p></td>
+<td><p>GMD</p></td>
+</tr>
+<tr class="row-odd"><td><p>Danish Krone</p></td>
+<td><p>DKK</p></td>
+</tr>
+<tr class="row-even"><td><p>Denar</p></td>
+<td><p>MKD</p></td>
+</tr>
+<tr class="row-odd"><td><p>Djibouti Franc</p></td>
+<td><p>DJF</p></td>
+</tr>
+<tr class="row-even"><td><p>Dobra</p></td>
+<td><p>STN</p></td>
+</tr>
+<tr class="row-odd"><td><p>Dominican Peso</p></td>
+<td><p>DOP</p></td>
+</tr>
+<tr class="row-even"><td><p>Dong</p></td>
+<td><p>VND</p></td>
+</tr>
+<tr class="row-odd"><td><p>East Caribbean Dollar</p></td>
+<td><p>XCD</p></td>
+</tr>
+<tr class="row-even"><td><p>Egyptian Pound</p></td>
+<td><p>EGP</p></td>
+</tr>
+<tr class="row-odd"><td><p>El Salvador Colon</p></td>
+<td><p>SVC</p></td>
+</tr>
+<tr class="row-even"><td><p>Ethiopian Birr</p></td>
+<td><p>ETB</p></td>
+</tr>
+<tr class="row-odd"><td><p>Euro</p></td>
+<td><p>EUR</p></td>
+</tr>
+<tr class="row-even"><td><p>Falkland Islands Pound</p></td>
+<td><p>FKP</p></td>
+</tr>
+<tr class="row-odd"><td><p>Fiji Dollar</p></td>
+<td><p>FJD</p></td>
+</tr>
+<tr class="row-even"><td><p>Forint</p></td>
+<td><p>HUF</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ghana Cedi</p></td>
+<td><p>GHS</p></td>
+</tr>
+<tr class="row-even"><td><p>Gibraltar Pound</p></td>
+<td><p>GIP</p></td>
+</tr>
+<tr class="row-odd"><td><p>Gourde</p></td>
+<td><p>HTG</p></td>
+</tr>
+<tr class="row-even"><td><p>Guarani</p></td>
+<td><p>PYG</p></td>
+</tr>
+<tr class="row-odd"><td><p>Guinean Franc</p></td>
+<td><p>GNF</p></td>
+</tr>
+<tr class="row-even"><td><p>Guyana Dollar</p></td>
+<td><p>GYD</p></td>
+</tr>
+<tr class="row-odd"><td><p>Hong Kong Dollar</p></td>
+<td><p>HKD</p></td>
+</tr>
+<tr class="row-even"><td><p>Hryvnia</p></td>
+<td><p>UAH</p></td>
+</tr>
+<tr class="row-odd"><td><p>Iceland Krona</p></td>
+<td><p>ISK</p></td>
+</tr>
+<tr class="row-even"><td><p>Indian Rupee</p></td>
+<td><p>INR</p></td>
+</tr>
+<tr class="row-odd"><td><p>Iranian Rial</p></td>
+<td><p>IRR</p></td>
+</tr>
+<tr class="row-even"><td><p>Iraqi Dinar</p></td>
+<td><p>IQD</p></td>
+</tr>
+<tr class="row-odd"><td><p>Jamaican Dollar</p></td>
+<td><p>JMD</p></td>
+</tr>
+<tr class="row-even"><td><p>Jordanian Dinar</p></td>
+<td><p>JOD</p></td>
+</tr>
+<tr class="row-odd"><td><p>Kenyan Shilling</p></td>
+<td><p>KES</p></td>
+</tr>
+<tr class="row-even"><td><p>Kina</p></td>
+<td><p>PGK</p></td>
+</tr>
+<tr class="row-odd"><td><p>Kuwaiti Dinar</p></td>
+<td><p>KWD</p></td>
+</tr>
+<tr class="row-even"><td><p>Kwanza</p></td>
+<td><p>AOA</p></td>
+</tr>
+<tr class="row-odd"><td><p>Kyat</p></td>
+<td><p>MMK</p></td>
+</tr>
+<tr class="row-even"><td><p>Lao Kip</p></td>
+<td><p>LAK</p></td>
+</tr>
+<tr class="row-odd"><td><p>Lari</p></td>
+<td><p>GEL</p></td>
+</tr>
+<tr class="row-even"><td><p>Lebanese Pound</p></td>
+<td><p>LBP</p></td>
+</tr>
+<tr class="row-odd"><td><p>Lek</p></td>
+<td><p>ALL</p></td>
+</tr>
+<tr class="row-even"><td><p>Lempira</p></td>
+<td><p>HNL</p></td>
+</tr>
+<tr class="row-odd"><td><p>Leone</p></td>
+<td><p>SLE</p></td>
+</tr>
+<tr class="row-even"><td><p>Liberian Dollar</p></td>
+<td><p>LRD</p></td>
+</tr>
+<tr class="row-odd"><td><p>Libyan Dinar</p></td>
+<td><p>LYD</p></td>
+</tr>
+<tr class="row-even"><td><p>Lilangeni</p></td>
+<td><p>SZL</p></td>
+</tr>
+<tr class="row-odd"><td><p>Loti</p></td>
+<td><p>LSL</p></td>
+</tr>
+<tr class="row-even"><td><p>Malagasy Ariary</p></td>
+<td><p>MGA</p></td>
+</tr>
+<tr class="row-odd"><td><p>Malawi Kwacha</p></td>
+<td><p>MWK</p></td>
+</tr>
+<tr class="row-even"><td><p>Malaysian Ringgit</p></td>
+<td><p>MYR</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mauritius Rupee</p></td>
+<td><p>MUR</p></td>
+</tr>
+<tr class="row-even"><td><p>Mexican Peso</p></td>
+<td><p>MXN</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mexican Unidad de Inversion (UDI)</p></td>
+<td><p>MXV</p></td>
+</tr>
+<tr class="row-even"><td><p>Moldovan Leu</p></td>
+<td><p>MDL</p></td>
+</tr>
+<tr class="row-odd"><td><p>Moroccan Dirham</p></td>
+<td><p>MAD</p></td>
+</tr>
+<tr class="row-even"><td><p>Mozambique Metical</p></td>
+<td><p>MZN</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mvdol</p></td>
+<td><p>BOV</p></td>
+</tr>
+<tr class="row-even"><td><p>Naira</p></td>
+<td><p>NGN</p></td>
+</tr>
+<tr class="row-odd"><td><p>Nakfa</p></td>
+<td><p>ERN</p></td>
+</tr>
+<tr class="row-even"><td><p>Namibia Dollar</p></td>
+<td><p>NAD</p></td>
+</tr>
+<tr class="row-odd"><td><p>Nepalese Rupee</p></td>
+<td><p>NPR</p></td>
+</tr>
+<tr class="row-even"><td><p>Netherlands Antillean Guilder</p></td>
+<td><p>ANG</p></td>
+</tr>
+<tr class="row-odd"><td><p>New Israeli Sheqel</p></td>
+<td><p>ILS</p></td>
+</tr>
+<tr class="row-even"><td><p>New Taiwan Dollar</p></td>
+<td><p>TWD</p></td>
+</tr>
+<tr class="row-odd"><td><p>New Zealand Dollar</p></td>
+<td><p>NZD</p></td>
+</tr>
+<tr class="row-even"><td><p>Ngultrum</p></td>
+<td><p>BTN</p></td>
+</tr>
+<tr class="row-odd"><td><p>North Korean Won</p></td>
+<td><p>KPW</p></td>
+</tr>
+<tr class="row-even"><td><p>Norwegian Krone</p></td>
+<td><p>NOK</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ouguiya</p></td>
+<td><p>MRU</p></td>
+</tr>
+<tr class="row-even"><td><p>Pa’anga</p></td>
+<td><p>TOP</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pakistan Rupee</p></td>
+<td><p>PKR</p></td>
+</tr>
+<tr class="row-even"><td><p>Pataca</p></td>
+<td><p>MOP</p></td>
+</tr>
+<tr class="row-odd"><td><p>Peso Uruguayo</p></td>
+<td><p>UYU</p></td>
+</tr>
+<tr class="row-even"><td><p>Philippine Peso</p></td>
+<td><p>PHP</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pound Sterling</p></td>
+<td><p>GBP</p></td>
+</tr>
+<tr class="row-even"><td><p>Pula</p></td>
+<td><p>BWP</p></td>
+</tr>
+<tr class="row-odd"><td><p>Qatari Rial</p></td>
+<td><p>QAR</p></td>
+</tr>
+<tr class="row-even"><td><p>Quetzal</p></td>
+<td><p>GTQ</p></td>
+</tr>
+<tr class="row-odd"><td><p>Rand</p></td>
+<td><p>ZAR</p></td>
+</tr>
+<tr class="row-even"><td><p>Rial Omani</p></td>
+<td><p>OMR</p></td>
+</tr>
+<tr class="row-odd"><td><p>Riel</p></td>
+<td><p>KHR</p></td>
+</tr>
+<tr class="row-even"><td><p>Romanian Leu</p></td>
+<td><p>RON</p></td>
+</tr>
+<tr class="row-odd"><td><p>Rufiyaa</p></td>
+<td><p>MVR</p></td>
+</tr>
+<tr class="row-even"><td><p>Rupiah</p></td>
+<td><p>IDR</p></td>
+</tr>
+<tr class="row-odd"><td><p>Russian Ruble</p></td>
+<td><p>RUB</p></td>
+</tr>
+<tr class="row-even"><td><p>Rwanda Franc</p></td>
+<td><p>RWF</p></td>
+</tr>
+<tr class="row-odd"><td><p>Saint Helena Pound</p></td>
+<td><p>SHP</p></td>
+</tr>
+<tr class="row-even"><td><p>Saudi Riyal</p></td>
+<td><p>SAR</p></td>
+</tr>
+<tr class="row-odd"><td><p>SDR (Special Drawing Right)</p></td>
+<td><p>XDR</p></td>
+</tr>
+<tr class="row-even"><td><p>Serbian Dinar</p></td>
+<td><p>RSD</p></td>
+</tr>
+<tr class="row-odd"><td><p>Seychelles Rupee</p></td>
+<td><p>SCR</p></td>
+</tr>
+<tr class="row-even"><td><p>Singapore Dollar</p></td>
+<td><p>SGD</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sol</p></td>
+<td><p>PEN</p></td>
+</tr>
+<tr class="row-even"><td><p>Solomon Islands Dollar</p></td>
+<td><p>SBD</p></td>
+</tr>
+<tr class="row-odd"><td><p>Som</p></td>
+<td><p>KGS</p></td>
+</tr>
+<tr class="row-even"><td><p>Somali Shilling</p></td>
+<td><p>SOS</p></td>
+</tr>
+<tr class="row-odd"><td><p>Somoni</p></td>
+<td><p>TJS</p></td>
+</tr>
+<tr class="row-even"><td><p>South Sudanese Pound</p></td>
+<td><p>SSP</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sri Lanka Rupee</p></td>
+<td><p>LKR</p></td>
+</tr>
+<tr class="row-even"><td><p>Sucre</p></td>
+<td><p>XSU</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sudanese Pound</p></td>
+<td><p>SDG</p></td>
+</tr>
+<tr class="row-even"><td><p>Surinam Dollar</p></td>
+<td><p>SRD</p></td>
+</tr>
+<tr class="row-odd"><td><p>Swedish Krona</p></td>
+<td><p>SEK</p></td>
+</tr>
+<tr class="row-even"><td><p>Swiss Franc</p></td>
+<td><p>CHF</p></td>
+</tr>
+<tr class="row-odd"><td><p>Syrian Pound</p></td>
+<td><p>SYP</p></td>
+</tr>
+<tr class="row-even"><td><p>Taka</p></td>
+<td><p>BDT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tala</p></td>
+<td><p>WST</p></td>
+</tr>
+<tr class="row-even"><td><p>Tanzanian Shilling</p></td>
+<td><p>TZS</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tenge</p></td>
+<td><p>KZT</p></td>
+</tr>
+<tr class="row-even"><td><p>Trinidad and Tobago Dollar</p></td>
+<td><p>TTD</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tugrik</p></td>
+<td><p>MNT</p></td>
+</tr>
+<tr class="row-even"><td><p>Tunisian Dinar</p></td>
+<td><p>TND</p></td>
+</tr>
+<tr class="row-odd"><td><p>Turkish Lira</p></td>
+<td><p>TRY</p></td>
+</tr>
+<tr class="row-even"><td><p>Turkmenistan New Manat</p></td>
+<td><p>TMT</p></td>
+</tr>
+<tr class="row-odd"><td><p>UAE Dirham</p></td>
+<td><p>AED</p></td>
+</tr>
+<tr class="row-even"><td><p>Uganda Shilling</p></td>
+<td><p>UGX</p></td>
+</tr>
+<tr class="row-odd"><td><p>Unidad de Fomento</p></td>
+<td><p>CLF</p></td>
+</tr>
+<tr class="row-even"><td><p>Unidad de Valor Real</p></td>
+<td><p>COU</p></td>
+</tr>
+<tr class="row-odd"><td><p>Unidad Previsional</p></td>
+<td><p>UYW</p></td>
+</tr>
+<tr class="row-even"><td><p>United States dollar</p></td>
+<td><p>USD</p></td>
+</tr>
+<tr class="row-odd"><td><p>Uruguay Peso en Unidades Indexadas (UI)</p></td>
+<td><p>UYI</p></td>
+</tr>
+<tr class="row-even"><td><p>US Dollar (Next day)</p></td>
+<td><p>USN</p></td>
+</tr>
+<tr class="row-odd"><td><p>Uzbekistan Sum</p></td>
+<td><p>UZS</p></td>
+</tr>
+<tr class="row-even"><td><p>Vatu</p></td>
+<td><p>VUV</p></td>
+</tr>
+<tr class="row-odd"><td><p>WIR Euro</p></td>
+<td><p>CHE</p></td>
+</tr>
+<tr class="row-even"><td><p>WIR Franc</p></td>
+<td><p>CHW</p></td>
+</tr>
+<tr class="row-odd"><td><p>Won</p></td>
+<td><p>KRW</p></td>
+</tr>
+<tr class="row-even"><td><p>Yemeni Rial</p></td>
+<td><p>YER</p></td>
+</tr>
+<tr class="row-odd"><td><p>Yen</p></td>
+<td><p>JPY</p></td>
+</tr>
+<tr class="row-even"><td><p>Yuan Renminbi</p></td>
+<td><p>CNY</p></td>
+</tr>
+<tr class="row-odd"><td><p>Zambian Kwacha</p></td>
+<td><p>ZMW</p></td>
+</tr>
+<tr class="row-even"><td><p>Zimbabwe Gold</p></td>
+<td><p>ZWG</p></td>
+</tr>
+<tr class="row-odd"><td><p>Zloty</p></td>
+<td><p>PLN</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="exchange-rate-data">
+<h3>Exchange Rate Data<a class="headerlink" href="#exchange-rate-data" title="Link to this heading">¶</a></h3>
+<p><strong>Data Source</strong></p>
+<p>Exchange rates are sourced from the U.S. Department of the Treasury’s Fiscal Data API, which provides official exchange rates used by the U.S. government for accounting and reporting purposes.</p>
+<ul class="simple">
+<li><p><strong>API Source</strong>: <a class="reference external" href="https://api.fiscaldata.treasury.gov/services/api/fiscal_service">https://api.fiscaldata.treasury.gov/services/api/fiscal_service</a></p></li>
+<li><p><strong>Data Provider</strong>: U.S. Department of the Treasury, Bureau of the Fiscal Service</p></li>
+</ul>
+<p><strong>Historical Coverage</strong></p>
+<p>Exchange rate data is available from <strong>March 31, 2001</strong> onwards. If you specify a date earlier than this, the system will use the earliest available rate.</p>
+<p><strong>Data Updates</strong></p>
+<p>The exchange rate database is automatically synchronized with the Treasury API to ensure you always have access to the most current rates. Updates are captured as soon as they become available from the Treasury.</p>
+<ul class="simple">
+<li><p><strong>Update Frequency</strong>: The U.S. Treasury typically publishes exchange rates on a <strong>quarterly basis</strong></p></li>
+<li><p><strong>Amendment Policy</strong>: If current rates deviate from the published rates by 10% or more, Treasury will issue amendments to the quarterly report</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">source</span></code>: Source citation and license information</p></li>
+</ul>
+</section>
 </section>
 </section>
 
@@ -457,12 +1088,23 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#authentication">Authentication</a><ul>
-<li><a class="reference internal" href="#using-api-key-recommended">Using API Key (Recommended)</a></li>
-<li><a class="reference internal" href="#using-pre-generated-token">Using Pre-generated Token</a></li>
+<li><a class="reference internal" href="#using-personal-access-token-pat">Using Personal Access Token (PAT)</a></li>
+<li><a class="reference internal" href="#using-api-key">Using API Key</a></li>
+<li><a class="reference internal" href="#using-pre-generated-jwt-token">Using Pre-generated JWT Token</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#first-api-call">First API Call</a></li>
 <li><a class="reference internal" href="#example-response">Example Response</a></li>
+<li><a class="reference internal" href="#example-response-with-details">Example Response with Details</a><ul>
+<li><a class="reference internal" href="#response-structure-details">Response Structure Details</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#currency-conversion-support">Currency Conversion Support</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#supported-currencies">Supported Currencies</a></li>
+<li><a class="reference internal" href="#exchange-rate-data">Exchange Rate Data</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -475,8 +1117,8 @@
     </aside>
   </div>
 </div><script src="_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="_static/doctools.js?v=fd6eb6e6"></script>
-    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=46bd48cc"></script>
     </body>
 </html>

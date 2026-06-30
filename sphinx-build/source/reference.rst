@@ -15,6 +15,8 @@ API
 
 .. js:autofunction:: Factor.retrieveFactor
 
+.. js:autofunction:: Factor.search
+
 .. js:autofunction:: Fugitive.calculate
 
 .. js:autofunction:: Calculation.calculate
@@ -30,6 +32,22 @@ API
 .. js:autofunction:: RealEstate.calculate
 
 .. js:autofunction:: EconomicActivity.calculate
+
+Type Recommender API
+====================
+
+.. js:autofunction:: TypeRecommender.search
+
+
+Audit Log API
+=============
+
+Controls whether the organization's API requests and responses are stored for auditing.
+Organizations can disable storage if they don't need their API calls to be audited.
+
+.. js:autofunction:: AuditLog.getAuditConfig
+
+.. js:autofunction:: AuditLog.updateAuditConfig
 
 
 Global Metadata API
@@ -113,3 +131,11 @@ Interfaces
 .. js:autoclass:: Config.RequestConfig
 
 .. js:autoclass:: Config.ClientConfig
+
+.. js:autoclass:: AuditLogResponse.AuditLogResponse
+
+.. js:autoclass:: AuditLogResponse.AuditLogRequest
+
+.. js:autoclass:: TypeRecommenderResponse.TypeRecommenderResponse
+
+.. js:autoclass:: TypeRecommenderResponse.ActivityRequest

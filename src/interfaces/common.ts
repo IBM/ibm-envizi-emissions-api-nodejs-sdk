@@ -184,3 +184,49 @@ export interface Pagination {
    */
   size: number
 }
+
+/**
+ * Represents attribution information for real estate, physical activity, and economic activity calculations.
+ * Supports four scenarios:
+ * 1. Property value based (for general real estate)
+ * 2. Equity/Debt based (for private companies)
+ * 3. EVIC based (Enterprise Value Including Cash for physical activity)
+ * 4. Revenue based (for economic activity)
+ * @interface Attribution
+ */
+export interface Attribution {
+  /**
+   * The outstanding amount for the property or activity.
+   */
+  outstandingAmount?: number;
+  
+  /**
+   * The total property value (used in property value based scenario).
+   * Optional - use either propertyValue OR (totalEquity + totalDebt) OR evic OR revenue.
+   */
+  propertyValue?: number;
+  
+  /**
+   * The total equity amount (used in equity/debt based scenario for private companies).
+   * Optional - use either propertyValue OR (totalEquity + totalDebt) OR evic OR revenue.
+   */
+  totalEquity?: number;
+  
+  /**
+   * The total debt amount (used in equity/debt based scenario for private companies).
+   * Optional - use either propertyValue OR (totalEquity + totalDebt) OR evic OR revenue.
+   */
+  totalDebt?: number;
+
+  /**
+   * Enterprise Value Including Cash (EVIC) - used in EVIC based scenario for physical activity calculations.
+   * Optional - use either propertyValue OR (totalEquity + totalDebt) OR evic OR revenue.
+   */
+  evic?: number;
+
+  /**
+   * Total revenue - used in revenue based scenario for economic activity calculations.
+   * Optional - use either propertyValue OR (totalEquity + totalDebt) OR evic OR revenue.
+   */
+  revenue?: number;
+}

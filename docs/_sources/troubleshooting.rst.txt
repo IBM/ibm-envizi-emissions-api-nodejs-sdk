@@ -99,12 +99,61 @@ These errors occur when ``Client.getClient()`` is called with invalid or missing
 
 ----
 
+4. Missing Client ID with PAT Token
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Error Message:**
+
+.. code-block:: text
+
+   Error: If patToken is provided, "clientId" must also be provided.
+
+**Cause:** Personal Access Token (PAT) provided without client ID
+
+**Solution:** Provide ``clientId`` parameter when using a PAT token
+
+**Sample Function Call That Causes This Error:**
+
+.. code-block:: typescript
+
+   await Client.getClient({
+     patToken: 'your-pat-token'
+     // Missing clientId parameter
+   });
+
+----
+
+5. Organization ID Provided with PAT Token
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Error Message:**
+
+.. code-block:: text
+
+   Error: orgId should not be provided when using patToken.
+
+**Cause:** Organization ID should not be used with Personal Access Token authentication
+
+**Solution:** Remove ``orgId`` parameter when using PAT token authentication
+
+**Sample Function Call That Causes This Error:**
+
+.. code-block:: typescript
+
+   await Client.getClient({
+     patToken: 'your-pat-token',
+     clientId: 'client123',
+     orgId: 'org456'  // This should not be provided with PAT token
+   });
+
+----
+
 Authentication Errors (HTTP 401)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 These errors occur when authentication credentials are invalid or expired.
 
-4. Invalid API Key
+6. Invalid API Key
 ^^^^^^^^^^^^^^^^^^
 
 **Error Response:**
@@ -135,7 +184,7 @@ These errors occur when authentication credentials are invalid or expired.
 
 ----
 
-5. Invalid Organization ID
+7. Invalid Organization ID
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Error Response:**
@@ -166,7 +215,7 @@ These errors occur when authentication credentials are invalid or expired.
 
 ----
 
-6. Invalid Client ID
+8. Invalid Client ID
 ^^^^^^^^^^^^^^^^^^^^^
 
 **Error Response:**
@@ -197,7 +246,7 @@ These errors occur when authentication credentials are invalid or expired.
 
 ----
 
-7. Empty Token Response
+9. Empty Token Response
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Error Message:**
@@ -233,8 +282,8 @@ These errors occur when authentication credentials are invalid or expired.
 
 ----
 
-8. Missing Expiry Field in Token
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+10. Missing Expiry Field in Token
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Error Message:**
 
@@ -341,6 +390,14 @@ Error Summary Table
      - ``If apiKey is provided , "clientId" and "OrgId" must also be provided.``
      - N/A
      - Provide all three parameters
+   * - Configuration
+     - ``If patToken is provided, "clientId" must also be provided.``
+     - N/A
+     - Provide clientId with PAT token
+   * - Configuration
+     - ``orgId should not be provided when using patToken.``
+     - N/A
+     - Remove orgId when using PAT token
    * - Authentication
      - ``Cannot pass the security checks...``
      - 401
@@ -369,14 +426,22 @@ Required Configuration Parameters
 
 When calling ``Client.getClient()``, the following parameters are required based on authentication method:
 
-API Key Authentication (Recommended)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Personal Access Token (PAT) Authentication (Recommended)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- ``patToken`` - Your Personal Access Token
+- ``clientId`` - Your client ID
+
+**Note:** Do not provide ``orgId`` when using PAT token authentication.
+
+API Key Authentication
+~~~~~~~~~~~~~~~~~~~~~~
 
 - ``apiKey`` - Your IBM Cloud API key
 - ``clientId`` - Your client ID
 - ``orgId`` - Your organization ID
-- ``host`` - API host URL
-- ``authUrl`` - Authentication URL
+- ``host`` - API host URL (optional, uses default if not provided)
+- ``authUrl`` - Authentication URL (optional, uses default if not provided)
 
 Token Authentication
 ~~~~~~~~~~~~~~~~~~~~
@@ -479,8 +544,8 @@ For issues not covered in this guide:
 
 ----
 
-**Last Updated:** 2025-11-24
+**Last Updated:** 2026-05-31
 
-**SDK Version:** 1.0.1
+**SDK Version:** 1.0.2
 
 **Coverage:** SDK initialization, client instance, and authentication errors

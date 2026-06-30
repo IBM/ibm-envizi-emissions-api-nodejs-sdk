@@ -10,9 +10,14 @@ export * as Factor from './api/Factor';
 export * as FactorSets from './api/FactorSets'
 export * as EconomicActivity from './api/EconomicActivity';
 export * as RealEstate from './api/RealEstate';
+export * as PhysicalActivity from './api/PhysicalActivity';
 export * as Metadata from './api/Metadata';
 export * as TypeRecommender from './api/TypeRecommender';
+export * as AuditLog from './api/AuditLog';
 export { ClientConfig } from './interfaces/Config';
+
+// Common interfaces
+export { Attribution } from './interfaces/common';
 
 // Response interfaces
 export { AreaResponse, Location as LocationInfo } from './interfaces/response/AreaResponse';
@@ -38,3 +43,4 @@ export { TypeResponse } from './interfaces/response/TypeResponse';
 export { UnitResponse } from './interfaces/response/UnitResponse';
 export { UsageResponse } from './interfaces/response/UsageResponse';
 export { TypeRecommenderResponse, ActivityRequest } from './interfaces/response/TypeRecommenderResponse';
+export { AuditLogResponse, AuditLogRequest } from './interfaces/response/AuditLogResponse';

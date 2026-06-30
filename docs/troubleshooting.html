@@ -1,14 +1,14 @@
 <!doctype html>
 <html class="no-js" lang="en" data-content_root="./">
-  <head><meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="prev" title="Reference" href="reference.html">
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="Reference" href="reference.html" />
 
-    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+    <!-- Generated with Sphinx 8.1.3 and Furo 2025.07.19 -->
         <title>Troubleshooting Guide - IBM Envizi - Emissions API Node.js SDK documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=25af2a20" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx_js.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=8d04aa46" />
@@ -24,14 +24,14 @@
   }
   @media not print {
     body[data-theme="dark"] {
-      --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+      --color-code-background: #2b2b2b;
+  --color-code-foreground: #f8f8f2;
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
-        --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+        --color-code-background: #2b2b2b;
+  --color-code-foreground: #f8f8f2;
   
       }
     }
@@ -146,10 +146,14 @@
   </symbol>
 </svg>
 
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
-<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
-<label class="overlay sidebar-overlay" for="__navigation"></label>
-<label class="overlay toc-overlay" for="__toc"></label>
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
 
 <a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
 
@@ -159,7 +163,8 @@
   <header class="mobile-header">
     <div class="header-left">
       <label class="nav-overlay-icon" for="__navigation">
-        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
       </label>
     </div>
     <div class="header-center">
@@ -167,7 +172,8 @@
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
-        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
           <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
           <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
           <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
@@ -175,7 +181,8 @@
         </button>
       </div>
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
-        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
     </div>
   </header>
@@ -195,11 +202,13 @@
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="sdk.html">SDK</a><input aria-label="Toggle navigation of SDK" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="sdk.html">SDK</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of SDK</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="client.html">Client</a></li>
 <li class="toctree-l2"><a class="reference internal" href="authentication.html">Authentication</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client.html">Client</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reference.html">Reference</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Troubleshooting Guide</a></li>
 </ul>
@@ -228,7 +237,8 @@
   </a>
 </div>
 <div class="theme-toggle-container theme-toggle-content">
-            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
               <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
               <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
@@ -236,7 +246,8 @@
             </button>
           </div>
           <label class="toc-overlay-icon toc-content-icon" for="__toc">
-            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main" id="furo-main-content">
@@ -313,13 +324,48 @@
 </pre></div>
 </div>
 </section>
+<hr class="docutils" />
+<section id="missing-client-id-with-pat-token">
+<h4>4. Missing Client ID with PAT Token<a class="headerlink" href="#missing-client-id-with-pat-token" title="Link to this heading">¶</a></h4>
+<p><strong>Error Message:</strong></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Error: If patToken is provided, &quot;clientId&quot; must also be provided.
+</pre></div>
+</div>
+<p><strong>Cause:</strong> Personal Access Token (PAT) provided without client ID</p>
+<p><strong>Solution:</strong> Provide <code class="docutils literal notranslate"><span class="pre">clientId</span></code> parameter when using a PAT token</p>
+<p><strong>Sample Function Call That Causes This Error:</strong></p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">Client</span><span class="p">.</span><span class="nx">getClient</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">patToken</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;your-pat-token&#39;</span>
+<span class="w">  </span><span class="c1">// Missing clientId parameter</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="organization-id-provided-with-pat-token">
+<h4>5. Organization ID Provided with PAT Token<a class="headerlink" href="#organization-id-provided-with-pat-token" title="Link to this heading">¶</a></h4>
+<p><strong>Error Message:</strong></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Error: orgId should not be provided when using patToken.
+</pre></div>
+</div>
+<p><strong>Cause:</strong> Organization ID should not be used with Personal Access Token authentication</p>
+<p><strong>Solution:</strong> Remove <code class="docutils literal notranslate"><span class="pre">orgId</span></code> parameter when using PAT token authentication</p>
+<p><strong>Sample Function Call That Causes This Error:</strong></p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">Client</span><span class="p">.</span><span class="nx">getClient</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">patToken</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;your-pat-token&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">clientId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;client123&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">orgId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;org456&#39;</span><span class="w">  </span><span class="c1">// This should not be provided with PAT token</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</section>
 </section>
 <hr class="docutils" />
 <section id="authentication-errors-http-401">
 <h3>Authentication Errors (HTTP 401)<a class="headerlink" href="#authentication-errors-http-401" title="Link to this heading">¶</a></h3>
 <p>These errors occur when authentication credentials are invalid or expired.</p>
 <section id="invalid-api-key">
-<h4>4. Invalid API Key<a class="headerlink" href="#invalid-api-key" title="Link to this heading">¶</a></h4>
+<h4>6. Invalid API Key<a class="headerlink" href="#invalid-api-key" title="Link to this heading">¶</a></h4>
 <p><strong>Error Response:</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;httpCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;401&quot;</span><span class="p">,</span>
@@ -343,7 +389,7 @@
 </section>
 <hr class="docutils" />
 <section id="invalid-organization-id">
-<h4>5. Invalid Organization ID<a class="headerlink" href="#invalid-organization-id" title="Link to this heading">¶</a></h4>
+<h4>7. Invalid Organization ID<a class="headerlink" href="#invalid-organization-id" title="Link to this heading">¶</a></h4>
 <p><strong>Error Response:</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;httpCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;401&quot;</span><span class="p">,</span>
@@ -367,7 +413,7 @@
 </section>
 <hr class="docutils" />
 <section id="invalid-client-id">
-<h4>6. Invalid Client ID<a class="headerlink" href="#invalid-client-id" title="Link to this heading">¶</a></h4>
+<h4>8. Invalid Client ID<a class="headerlink" href="#invalid-client-id" title="Link to this heading">¶</a></h4>
 <p><strong>Error Response:</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;httpCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;401&quot;</span><span class="p">,</span>
@@ -391,7 +437,7 @@
 </section>
 <hr class="docutils" />
 <section id="empty-token-response">
-<h4>7. Empty Token Response<a class="headerlink" href="#empty-token-response" title="Link to this heading">¶</a></h4>
+<h4>9. Empty Token Response<a class="headerlink" href="#empty-token-response" title="Link to this heading">¶</a></h4>
 <p><strong>Error Message:</strong></p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Error: Token response is empty
 </pre></div>
@@ -420,7 +466,7 @@
 </section>
 <hr class="docutils" />
 <section id="missing-expiry-field-in-token">
-<h4>8. Missing Expiry Field in Token<a class="headerlink" href="#missing-expiry-field-in-token" title="Link to this heading">¶</a></h4>
+<h4>10. Missing Expiry Field in Token<a class="headerlink" href="#missing-expiry-field-in-token" title="Link to this heading">¶</a></h4>
 <p><strong>Error Message:</strong></p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Error: exp field is missing in the token
 </pre></div>
@@ -522,6 +568,16 @@
 <td><p>N/A</p></td>
 <td><p>Provide all three parameters</p></td>
 </tr>
+<tr class="row-odd"><td><p>Configuration</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">If</span> <span class="pre">patToken</span> <span class="pre">is</span> <span class="pre">provided,</span> <span class="pre">&quot;clientId&quot;</span> <span class="pre">must</span> <span class="pre">also</span> <span class="pre">be</span> <span class="pre">provided.</span></code></p></td>
+<td><p>N/A</p></td>
+<td><p>Provide clientId with PAT token</p></td>
+</tr>
+<tr class="row-even"><td><p>Configuration</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">orgId</span> <span class="pre">should</span> <span class="pre">not</span> <span class="pre">be</span> <span class="pre">provided</span> <span class="pre">when</span> <span class="pre">using</span> <span class="pre">patToken.</span></code></p></td>
+<td><p>N/A</p></td>
+<td><p>Remove orgId when using PAT token</p></td>
+</tr>
 <tr class="row-odd"><td><p>Authentication</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">Cannot</span> <span class="pre">pass</span> <span class="pre">the</span> <span class="pre">security</span> <span class="pre">checks...</span></code></p></td>
 <td><p>401</p></td>
@@ -555,14 +611,22 @@
 <section id="required-configuration-parameters">
 <h2>Required Configuration Parameters<a class="headerlink" href="#required-configuration-parameters" title="Link to this heading">¶</a></h2>
 <p>When calling <code class="docutils literal notranslate"><span class="pre">Client.getClient()</span></code>, the following parameters are required based on authentication method:</p>
-<section id="api-key-authentication-recommended">
-<h3>API Key Authentication (Recommended)<a class="headerlink" href="#api-key-authentication-recommended" title="Link to this heading">¶</a></h3>
+<section id="personal-access-token-pat-authentication-recommended">
+<h3>Personal Access Token (PAT) Authentication (Recommended)<a class="headerlink" href="#personal-access-token-pat-authentication-recommended" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">patToken</span></code> - Your Personal Access Token</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">clientId</span></code> - Your client ID</p></li>
+</ul>
+<p><strong>Note:</strong> Do not provide <code class="docutils literal notranslate"><span class="pre">orgId</span></code> when using PAT token authentication.</p>
+</section>
+<section id="api-key-authentication">
+<h3>API Key Authentication<a class="headerlink" href="#api-key-authentication" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">apiKey</span></code> - Your IBM Cloud API key</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">clientId</span></code> - Your client ID</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">orgId</span></code> - Your organization ID</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">host</span></code> - API host URL</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">authUrl</span></code> - Authentication URL</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">host</span></code> - API host URL (optional, uses default if not provided)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">authUrl</span></code> - Authentication URL (optional, uses default if not provided)</p></li>
 </ul>
 </section>
 <section id="token-authentication">
@@ -662,8 +726,8 @@
 </li>
 </ol>
 <hr class="docutils" />
-<p><strong>Last Updated:</strong> 2025-11-24</p>
-<p><strong>SDK Version:</strong> 1.0.1</p>
+<p><strong>Last Updated:</strong> 2026-05-31</p>
+<p><strong>SDK Version:</strong> 1.0.2</p>
 <p><strong>Coverage:</strong> SDK initialization, client instance, and authentication errors</p>
 </section>
 </section>
@@ -722,14 +786,16 @@
 <li><a class="reference internal" href="#missing-auth-url-with-custom-host">1. Missing Auth URL with Custom Host</a></li>
 <li><a class="reference internal" href="#missing-client-id-with-token">2. Missing Client ID with Token</a></li>
 <li><a class="reference internal" href="#missing-parameters-with-api-key">3. Missing Parameters with API Key</a></li>
+<li><a class="reference internal" href="#missing-client-id-with-pat-token">4. Missing Client ID with PAT Token</a></li>
+<li><a class="reference internal" href="#organization-id-provided-with-pat-token">5. Organization ID Provided with PAT Token</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#authentication-errors-http-401">Authentication Errors (HTTP 401)</a><ul>
-<li><a class="reference internal" href="#invalid-api-key">4. Invalid API Key</a></li>
-<li><a class="reference internal" href="#invalid-organization-id">5. Invalid Organization ID</a></li>
-<li><a class="reference internal" href="#invalid-client-id">6. Invalid Client ID</a></li>
-<li><a class="reference internal" href="#empty-token-response">7. Empty Token Response</a></li>
-<li><a class="reference internal" href="#missing-expiry-field-in-token">8. Missing Expiry Field in Token</a></li>
+<li><a class="reference internal" href="#invalid-api-key">6. Invalid API Key</a></li>
+<li><a class="reference internal" href="#invalid-organization-id">7. Invalid Organization ID</a></li>
+<li><a class="reference internal" href="#invalid-client-id">8. Invalid Client ID</a></li>
+<li><a class="reference internal" href="#empty-token-response">9. Empty Token Response</a></li>
+<li><a class="reference internal" href="#missing-expiry-field-in-token">10. Missing Expiry Field in Token</a></li>
 </ul>
 </li>
 </ul>
@@ -744,7 +810,8 @@
 </li>
 <li><a class="reference internal" href="#error-summary-table">Error Summary Table</a></li>
 <li><a class="reference internal" href="#required-configuration-parameters">Required Configuration Parameters</a><ul>
-<li><a class="reference internal" href="#api-key-authentication-recommended">API Key Authentication (Recommended)</a></li>
+<li><a class="reference internal" href="#personal-access-token-pat-authentication-recommended">Personal Access Token (PAT) Authentication (Recommended)</a></li>
+<li><a class="reference internal" href="#api-key-authentication">API Key Authentication</a></li>
 <li><a class="reference internal" href="#token-authentication">Token Authentication</a></li>
 </ul>
 </li>
@@ -770,8 +837,8 @@
     </aside>
   </div>
 </div><script src="_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="_static/doctools.js?v=fd6eb6e6"></script>
-    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=46bd48cc"></script>
     </body>
 </html>

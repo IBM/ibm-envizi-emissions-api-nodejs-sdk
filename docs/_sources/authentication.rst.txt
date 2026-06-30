@@ -10,17 +10,39 @@ The IBM Envizi - Emissions API Node.js SDK uses OAuth 2.0 Bearer Tokens for auth
 Authentication Methods
 ----------------------
 
-The SDK provides two authentication methods:
+The SDK provides three authentication methods:
 
-API Key Authentication (Recommended)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Personal Access Token (PAT) Authentication (Recommended)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This method uses a personal access token directly:
+
+.. code-block:: javascript
+
+    import { Client } from 'emissions-api-sdk';
+
+    await Client.getClient({
+      patToken: process.env.ENVIZI_PAT_TOKEN,
+      clientId: process.env.ENVIZI_CLIENT_ID
+    });
+
+**Required parameters:**
+    - ``patToken``: Your personal access token
+    - ``clientId``: Your client identifier
+
+.. note::
+
+   When using a PAT token, do not provide ``orgId``.
+
+API Key Authentication
+~~~~~~~~~~~~~~~~~~~~~~
 
 This method automatically handles token generation and refreshing:
 
 .. code-block:: javascript
 
     import { Client } from 'emissions-api-sdk';
-    
+
     await Client.getClient({
       apiKey: process.env.ENVIZI_API_KEY,
       clientId: process.env.ENVIZI_CLIENT_ID,

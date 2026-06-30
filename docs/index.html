@@ -1,14 +1,14 @@
 <!doctype html>
 <html class="no-js" lang="en" data-content_root="./">
-  <head><meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="Getting Started" href="getting_started.html">
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Getting Started" href="getting_started.html" />
 
-    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+    <!-- Generated with Sphinx 8.1.3 and Furo 2025.07.19 -->
         <title>IBM Envizi - Emissions API Node.js SDK documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=25af2a20" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx_js.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=8d04aa46" />
@@ -24,14 +24,14 @@
   }
   @media not print {
     body[data-theme="dark"] {
-      --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+      --color-code-background: #2b2b2b;
+  --color-code-foreground: #f8f8f2;
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
-        --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+        --color-code-background: #2b2b2b;
+  --color-code-foreground: #f8f8f2;
   
       }
     }
@@ -146,10 +146,14 @@
   </symbol>
 </svg>
 
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
-<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
-<label class="overlay sidebar-overlay" for="__navigation"></label>
-<label class="overlay toc-overlay" for="__toc"></label>
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
 
 <a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
 
@@ -159,7 +163,8 @@
   <header class="mobile-header">
     <div class="header-left">
       <label class="nav-overlay-icon" for="__navigation">
-        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
       </label>
     </div>
     <div class="header-center">
@@ -167,7 +172,8 @@
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
-        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
           <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
           <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
           <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
@@ -175,7 +181,8 @@
         </button>
       </div>
       <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
-        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
     </div>
   </header>
@@ -195,11 +202,13 @@
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="sdk.html">SDK</a><input aria-label="Toggle navigation of SDK" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="sdk.html">SDK</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of SDK</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="client.html">Client</a></li>
 <li class="toctree-l2"><a class="reference internal" href="authentication.html">Authentication</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client.html">Client</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reference.html">Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting Guide</a></li>
 </ul>
@@ -228,7 +237,8 @@
   </a>
 </div>
 <div class="theme-toggle-container theme-toggle-content">
-            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
               <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
               <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
@@ -236,7 +246,8 @@
             </button>
           </div>
           <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
-            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main" id="furo-main-content">
@@ -251,6 +262,8 @@
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#authentication">Authentication</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#first-api-call">First API Call</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#example-response">Example Response</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#example-response-with-details">Example Response with Details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#currency-conversion-support">Currency Conversion Support</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="sdk.html">SDK</a><ul>
@@ -258,11 +271,32 @@
 <li class="toctree-l2"><a class="reference internal" href="authentication.html">Authentication</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="authentication.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authentication.html#authentication-methods">Authentication Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authentication.html#authentication-flow">Authentication Flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authentication.html#authentication-headers">Authentication Headers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authentication.html#architecture-diagram">Architecture Diagram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authentication.html#security-best-practices">Security Best Practices</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="client.html">Client</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="client.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client.html#client-initialization">Client Initialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client.html#configuration-options">Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client.html#client-responsibilities">Client Responsibilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client.html#error-handling">Error Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client.html#best-practices">Best Practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client.html#authentication-integration">Authentication Integration</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="reference.html">Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="reference.html#Client"><code class="docutils literal notranslate"><span class="pre">Client</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="reference.html#request.makeApiRequest"><code class="docutils literal notranslate"><span class="pre">request.makeApiRequest()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="reference.html#utils.findExpiryTime"><code class="docutils literal notranslate"><span class="pre">utils.findExpiryTime()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="reference.html#api">API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#type-recommender-api">Type Recommender API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#audit-log-api">Audit Log API</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reference.html#global-metadata-api">Global Metadata API</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reference.html#usage-api">Usage API</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reference.html#interfaces">Interfaces</a></li>
@@ -301,6 +335,16 @@
 <li><p><strong>Generic</strong> – custom emission calculations</p></li>
 </ul>
 <p>The SDK is designed for embedding emission calculations in applications, building sustainability dashboards, automating large-scale datasets, and tracking carbon footprints.</p>
+</section>
+<section id="additional-capabilities">
+<h2>Additional capabilities<a class="headerlink" href="#additional-capabilities" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Metadata API</strong> – query supported types, areas, and units across endpoints</p></li>
+<li><p><strong>Type Recommender API</strong> – semantic search to identify likely activity types, with optional reranker control and scope in results</p></li>
+<li><p><strong>Factor Search API</strong> – search for emission factors with unit and scope filtering, with optional reranker control</p></li>
+<li><p><strong>Usage API</strong> – retrieve organization billing-period or historical usage</p></li>
+<li><p><strong>Audit Log API</strong> – manage whether API requests and responses are stored for auditing</p></li>
+</ul>
 </section>
 </section>
 
@@ -344,8 +388,8 @@
     </aside>
   </div>
 </div><script src="_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="_static/doctools.js?v=fd6eb6e6"></script>
-    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=46bd48cc"></script>
     </body>
 </html>
