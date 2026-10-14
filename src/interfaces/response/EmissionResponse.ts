@@ -41,6 +41,27 @@ export interface EmissionResponse {
   /** Asset turnover ratio (optional) */
   assetTurnoverRatio?: number;
 
+  /** Financed emission (optional) */
+  financedEmission?: number;
+
+  /** Scope 1 emissions (optional) */
+  scope1?: number;
+
+  /** Scope 2 emissions (optional) */
+  scope2?: number;
+
+  /** Scope 3 upstream emissions (optional) */
+  scope3Upstream?: number;
+
+  /** Scope 3 downstream emissions (optional) */
+  scope3Downstream?: number;
+
+  /** Attribution factor (optional) */
+  attributionFactor?: number;
+
+  /** Score (optional) */
+  score?: number;
+
    /** Unit of measurement for emissions (required) */
   unit: string;
   
