@@ -42,7 +42,7 @@
     "form-data": "^4.0.6",
     "handlebars": "^4.7.9",
     "js-yaml": "^4.3.1",
-    "markdown-it": "^14.3.0",
+    "markdown-it": "^14.3.2",
     "minimatch": "^10.2.5",
     "test-exclude": "^7.0.1"
   },
